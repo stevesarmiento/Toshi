@@ -1,0 +1,44 @@
+//
+//  SearchBarView.swift
+//  Toshi
+//
+//  Created by Steven Sarmiento on 10/3/23.
+//
+
+import SwiftUI
+
+struct SearchBarView: View {
+    
+    @Binding var searchText: String
+    
+    var body: some View {
+        HStack{
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(searchText.isEmpty ? Color.theme.accent.opacity(0.5): Color.theme.accent)
+            
+            TextField("Search by name or symbol...", text: $searchText)
+                .disableAutocorrection(true)
+                .overlay(
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(Color.theme.accent)
+                        .padding()
+                        .offset(x: 10)
+                        .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                        .onTapGesture {
+                            UIApplication.shared.endEditing()
+                            searchText = ""
+                        }
+                    
+                    ,alignment: .trailing
+                )
+        }
+        .font(.headline)
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(Color.theme.accent.opacity(0.1))
+        )
+        .padding(.bottom, 10)
+    }
+}
+

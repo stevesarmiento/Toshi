@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F320B0932ACA759E00F41E68 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F320B0922ACA759E00F41E68 /* NetworkingManager.swift */; };
+		F320B0962ACA7FC300F41E68 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F320B0952ACA7FC300F41E68 /* CoinImageView.swift */; };
+		F320B0982ACA81A100F41E68 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F320B0972ACA81A100F41E68 /* CoinImageService.swift */; };
+		F320B09A2ACA833400F41E68 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F320B0992ACA833400F41E68 /* CoinImageViewModel.swift */; };
+		F33851472ACBCCB500B6F076 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851462ACBCCB500B6F076 /* SearchBarView.swift */; };
+		F33851492ACBD03600B6F076 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851482ACBD03600B6F076 /* UIApplication.swift */; };
+		F338514B2ACC736300B6F076 /* CardSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338514A2ACC736300B6F076 /* CardSettingsView.swift */; };
+		F338514E2ACC750900B6F076 /* HalfModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338514D2ACC750900B6F076 /* HalfModalView.swift */; };
+		F33851502ACC758700B6F076 /* CreateBundleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */; };
+		F33851522ACC768400B6F076 /* CustomLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851512ACC768400B6F076 /* CustomLinks.swift */; };
+		F33851542ACC87E400B6F076 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851532ACC87E400B6F076 /* StatisticModel.swift */; };
+		F33851562ACC891500B6F076 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851552ACC891500B6F076 /* StatisticView.swift */; };
+		F33851582ACC8BE000B6F076 /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851572ACC8BE000B6F076 /* HomeStatsView.swift */; };
+		F338515A2ACC8EAA00B6F076 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851592ACC8EAA00B6F076 /* MarketData.swift */; };
+		F338515C2ACC93CE00B6F076 /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338515B2ACC93CE00B6F076 /* MarketDataService.swift */; };
+		F338515E2ACCA6A600B6F076 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338515D2ACCA6A600B6F076 /* PortfolioView.swift */; };
+		F33851602ACCAC6C00B6F076 /* PortfolioStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */; };
+		F33851622ACCF80C00B6F076 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851612ACCF80C00B6F076 /* Enums.swift */; };
+		F33851652ACCFF1C00B6F076 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851642ACCFF1C00B6F076 /* XMarkButton.swift */; };
+		F33851672ACD08D000B6F076 /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851662ACD08D000B6F076 /* CoinLogoView.swift */; };
+		F338516A2ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F33851682ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld */; };
+		F338516C2ACDF4E200B6F076 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338516B2ACDF4E200B6F076 /* PortfolioDataService.swift */; };
+		F33851742ACE62BB00B6F076 /* PortfolioStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851732ACE62BB00B6F076 /* PortfolioStatisticsView.swift */; };
+		F33851762ACE642C00B6F076 /* PortfolioStatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851752ACE642C00B6F076 /* PortfolioStatisticsModel.swift */; };
+		F33851782ACE7F8800B6F076 /* CardSettingsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851772ACE7F8800B6F076 /* CardSettingsModalView.swift */; };
+		F338517A2ACF24AF00B6F076 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851792ACF24AF00B6F076 /* DetailView.swift */; };
+		F338517F2ACF469600B6F076 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338517E2ACF469600B6F076 /* DetailViewModel.swift */; };
+		F33851812ACF4A0200B6F076 /* CoinDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851802ACF4A0200B6F076 /* CoinDetailViewModel.swift */; };
+		F33851832ACF4A3500B6F076 /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851822ACF4A3500B6F076 /* CoinDetailDataService.swift */; };
+		F33851852ACF8A2300B6F076 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851842ACF8A2300B6F076 /* ChartView.swift */; };
+		F33851872ACFBB0A00B6F076 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33851862ACFBB0A00B6F076 /* Date.swift */; };
+		F338518E2AD08EF200B6F076 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338518D2AD08EF200B6F076 /* InfoButton.swift */; };
+		F3542B732ACBBE95004AEDFC /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3542B722ACBBE95004AEDFC /* LocalFileManager.swift */; };
+		F37DF72D2AC9E37D00B64858 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF72C2AC9E37D00B64858 /* CoinRowView.swift */; };
+		F37DF72F2AC9E4B900B64858 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF72E2AC9E4B900B64858 /* PreviewProvider.swift */; };
+		F37DF7312AC9E71800B64858 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF7302AC9E71800B64858 /* Double.swift */; };
+		F37DF7332AC9EF0100B64858 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF7322AC9EF0100B64858 /* HomeViewModel.swift */; };
+		F37DF7362ACA0B7A00B64858 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37DF7352ACA0B7A00B64858 /* CoinDataService.swift */; };
+		F3BB330E2AC913510054B74A /* ToshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB330D2AC913510054B74A /* ToshiApp.swift */; };
+		F3BB33122AC913520054B74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BB33112AC913520054B74A /* Assets.xcassets */; };
+		F3BB33162AC913520054B74A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BB33152AC913520054B74A /* Preview Assets.xcassets */; };
+		F3BB331E2AC922C50054B74A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB331D2AC922C50054B74A /* Color.swift */; };
+		F3BB33212AC92B420054B74A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB33202AC92B420054B74A /* SplashScreenView.swift */; };
+		F3BB33242AC92B800054B74A /* AnimationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB33232AC92B800054B74A /* AnimationUtility.swift */; };
+		F3BB332C2AC9420C0054B74A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB332B2AC9420C0054B74A /* HomeView.swift */; };
+		F3BB332E2AC942590054B74A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB332D2AC942590054B74A /* OnboardingView.swift */; };
+		F3BB33352AC9BB320054B74A /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB33342AC9BB320054B74A /* CircleButtonView.swift */; };
+		F3BB33372AC9BD080054B74A /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB33362AC9BD080054B74A /* CardDetailView.swift */; };
+		F3BB33392AC9BE6A0054B74A /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB33382AC9BE6A0054B74A /* CardGridView.swift */; };
+		F3BB333C2AC9D9E00054B74A /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB333B2AC9D9E00054B74A /* CoinModel.swift */; };
+		F3E761592AD250A90020FC80 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761582AD250A90020FC80 /* String.swift */; };
+		F3E7615B2AD2F0200020FC80 /* TransparentBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7615A2AD2F0200020FC80 /* TransparentBlurView.swift */; };
+		F3E7615D2AD2F9150020FC80 /* DetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F320B0922ACA759E00F41E68 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		F320B0952ACA7FC300F41E68 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
+		F320B0972ACA81A100F41E68 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
+		F320B0992ACA833400F41E68 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
+		F33851462ACBCCB500B6F076 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F33851482ACBD03600B6F076 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		F338514A2ACC736300B6F076 /* CardSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettingsView.swift; sourceTree = "<group>"; };
+		F338514D2ACC750900B6F076 /* HalfModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalView.swift; sourceTree = "<group>"; };
+		F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBundleCardView.swift; sourceTree = "<group>"; };
+		F33851512ACC768400B6F076 /* CustomLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLinks.swift; sourceTree = "<group>"; };
+		F33851532ACC87E400B6F076 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		F33851552ACC891500B6F076 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		F33851572ACC8BE000B6F076 /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
+		F33851592ACC8EAA00B6F076 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
+		F338515B2ACC93CE00B6F076 /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
+		F338515D2ACCA6A600B6F076 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStatsView.swift; sourceTree = "<group>"; };
+		F33851612ACCF80C00B6F076 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		F33851642ACCFF1C00B6F076 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
+		F33851662ACD08D000B6F076 /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
+		F33851692ACDF45100B6F076 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
+		F338516B2ACDF4E200B6F076 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
+		F33851732ACE62BB00B6F076 /* PortfolioStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStatisticsView.swift; sourceTree = "<group>"; };
+		F33851752ACE642C00B6F076 /* PortfolioStatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStatisticsModel.swift; sourceTree = "<group>"; };
+		F33851772ACE7F8800B6F076 /* CardSettingsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettingsModalView.swift; sourceTree = "<group>"; };
+		F33851792ACF24AF00B6F076 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F338517E2ACF469600B6F076 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		F33851802ACF4A0200B6F076 /* CoinDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewModel.swift; sourceTree = "<group>"; };
+		F33851822ACF4A3500B6F076 /* CoinDetailDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailDataService.swift; sourceTree = "<group>"; };
+		F33851842ACF8A2300B6F076 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		F33851862ACFBB0A00B6F076 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F338518D2AD08EF200B6F076 /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
+		F3542B722ACBBE95004AEDFC /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		F37DF72C2AC9E37D00B64858 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
+		F37DF72E2AC9E4B900B64858 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		F37DF7302AC9E71800B64858 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		F37DF7322AC9EF0100B64858 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F37DF7352ACA0B7A00B64858 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		F3BB330A2AC913510054B74A /* Toshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BB330D2AC913510054B74A /* ToshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToshiApp.swift; sourceTree = "<group>"; };
+		F3BB33112AC913520054B74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3BB33132AC913520054B74A /* Toshi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Toshi.entitlements; sourceTree = "<group>"; };
+		F3BB33152AC913520054B74A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3BB331D2AC922C50054B74A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F3BB33202AC92B420054B74A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		F3BB33232AC92B800054B74A /* AnimationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtility.swift; sourceTree = "<group>"; };
+		F3BB332B2AC9420C0054B74A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F3BB332D2AC942590054B74A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F3BB33342AC9BB320054B74A /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		F3BB33362AC9BD080054B74A /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		F3BB33382AC9BE6A0054B74A /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
+		F3BB333B2AC9D9E00054B74A /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		F3E761582AD250A90020FC80 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F3E7615A2AD2F0200020FC80 /* TransparentBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentBlurView.swift; sourceTree = "<group>"; };
+		F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStatisticsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3BB33072AC913510054B74A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F320B0942ACA7FB500F41E68 /* CoinImage */ = {
+			isa = PBXGroup;
+			children = (
+				F320B0952ACA7FC300F41E68 /* CoinImageView.swift */,
+				F320B0992ACA833400F41E68 /* CoinImageViewModel.swift */,
+				F33851662ACD08D000B6F076 /* CoinLogoView.swift */,
+			);
+			path = CoinImage;
+			sourceTree = "<group>";
+		};
+		F338514C2ACC74FB00B6F076 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				F338514D2ACC750900B6F076 /* HalfModalView.swift */,
+				F33851772ACE7F8800B6F076 /* CardSettingsModalView.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		F338517B2ACF24EE00B6F076 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F338517C2ACF250C00B6F076 /* Views */,
+				F338517D2ACF251300B6F076 /* ViewModels */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F338517C2ACF250C00B6F076 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F33851792ACF24AF00B6F076 /* DetailView.swift */,
+				F33851842ACF8A2300B6F076 /* ChartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F338517D2ACF251300B6F076 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F33851802ACF4A0200B6F076 /* CoinDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F37DF7342ACA0B1C00B64858 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F37DF7352ACA0B7A00B64858 /* CoinDataService.swift */,
+				F320B0972ACA81A100F41E68 /* CoinImageService.swift */,
+				F338515B2ACC93CE00B6F076 /* MarketDataService.swift */,
+				F338516B2ACDF4E200B6F076 /* PortfolioDataService.swift */,
+				F33851822ACF4A3500B6F076 /* CoinDetailDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3BB33012AC913510054B74A = {
+			isa = PBXGroup;
+			children = (
+				F3BB330C2AC913510054B74A /* Toshi */,
+				F3BB330B2AC913510054B74A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3BB330B2AC913510054B74A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB330A2AC913510054B74A /* Toshi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3BB330C2AC913510054B74A /* Toshi */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB330D2AC913510054B74A /* ToshiApp.swift */,
+				F3BB33252AC930450054B74A /* Core */,
+				F3BB333A2AC9D9C90054B74A /* Models */,
+				F37DF7342ACA0B1C00B64858 /* Services */,
+				F3BB33222AC92B640054B74A /* Utilities */,
+				F3BB331C2AC922B40054B74A /* Extensions */,
+				F3BB33112AC913520054B74A /* Assets.xcassets */,
+				F3BB33132AC913520054B74A /* Toshi.entitlements */,
+				F3BB332F2AC9AF210054B74A /* Managers */,
+				F3BB33142AC913520054B74A /* Preview Content */,
+			);
+			path = Toshi;
+			sourceTree = "<group>";
+		};
+		F3BB33142AC913520054B74A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB33152AC913520054B74A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3BB331C2AC922B40054B74A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB331D2AC922C50054B74A /* Color.swift */,
+				F37DF72E2AC9E4B900B64858 /* PreviewProvider.swift */,
+				F37DF7302AC9E71800B64858 /* Double.swift */,
+				F33851482ACBD03600B6F076 /* UIApplication.swift */,
+				F33851862ACFBB0A00B6F076 /* Date.swift */,
+				F3E761582AD250A90020FC80 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3BB331F2AC92B250054B74A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB332B2AC9420C0054B74A /* HomeView.swift */,
+				F33851572ACC8BE000B6F076 /* HomeStatsView.swift */,
+				F3BB33202AC92B420054B74A /* SplashScreenView.swift */,
+				F3BB332D2AC942590054B74A /* OnboardingView.swift */,
+				F3BB33362AC9BD080054B74A /* CardDetailView.swift */,
+				F3BB33382AC9BE6A0054B74A /* CardGridView.swift */,
+				F37DF72C2AC9E37D00B64858 /* CoinRowView.swift */,
+				F338514A2ACC736300B6F076 /* CardSettingsView.swift */,
+				F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */,
+				F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */,
+				F338515D2ACCA6A600B6F076 /* PortfolioView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F3BB33222AC92B640054B74A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB33232AC92B800054B74A /* AnimationUtility.swift */,
+				F320B0922ACA759E00F41E68 /* NetworkingManager.swift */,
+				F3542B722ACBBE95004AEDFC /* LocalFileManager.swift */,
+				F33851512ACC768400B6F076 /* CustomLinks.swift */,
+				F33851612ACCF80C00B6F076 /* Enums.swift */,
+				F3E7615A2AD2F0200020FC80 /* TransparentBlurView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F3BB33252AC930450054B74A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB33322AC9BB160054B74A /* Components */,
+				F3BB33282AC930910054B74A /* Home */,
+				F338517B2ACF24EE00B6F076 /* Detail */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F3BB33272AC930840054B74A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F37DF7322AC9EF0100B64858 /* HomeViewModel.swift */,
+				F33851532ACC87E400B6F076 /* StatisticModel.swift */,
+				F33851752ACE642C00B6F076 /* PortfolioStatisticsModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F3BB33282AC930910054B74A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F338514C2ACC74FB00B6F076 /* Modals */,
+				F3BB331F2AC92B250054B74A /* Views */,
+				F3BB33272AC930840054B74A /* ViewModels */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F3BB332F2AC9AF210054B74A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F3BB33322AC9BB160054B74A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F320B0942ACA7FB500F41E68 /* CoinImage */,
+				F3BB33332AC9BB1E0054B74A /* CircleButton */,
+				F33851462ACBCCB500B6F076 /* SearchBarView.swift */,
+				F33851552ACC891500B6F076 /* StatisticView.swift */,
+				F33851732ACE62BB00B6F076 /* PortfolioStatisticsView.swift */,
+				F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F3BB33332AC9BB1E0054B74A /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				F33851642ACCFF1C00B6F076 /* XMarkButton.swift */,
+				F3BB33342AC9BB320054B74A /* CircleButtonView.swift */,
+				F338518D2AD08EF200B6F076 /* InfoButton.swift */,
+			);
+			path = CircleButton;
+			sourceTree = "<group>";
+		};
+		F3BB333A2AC9D9C90054B74A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB333B2AC9D9E00054B74A /* CoinModel.swift */,
+				F338517E2ACF469600B6F076 /* DetailViewModel.swift */,
+				F33851592ACC8EAA00B6F076 /* MarketData.swift */,
+				F33851682ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3BB33092AC913510054B74A /* Toshi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3BB33192AC913520054B74A /* Build configuration list for PBXNativeTarget "Toshi" */;
+			buildPhases = (
+				F3BB33062AC913510054B74A /* Sources */,
+				F3BB33072AC913510054B74A /* Frameworks */,
+				F3BB33082AC913510054B74A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toshi;
+			productName = Toshi;
+			productReference = F3BB330A2AC913510054B74A /* Toshi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3BB33022AC913510054B74A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F3BB33092AC913510054B74A = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F3BB33052AC913510054B74A /* Build configuration list for PBXProject "Toshi" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3BB33012AC913510054B74A;
+			productRefGroup = F3BB330B2AC913510054B74A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3BB33092AC913510054B74A /* Toshi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3BB33082AC913510054B74A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BB33162AC913520054B74A /* Preview Assets.xcassets in Resources */,
+				F3BB33122AC913520054B74A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3BB33062AC913510054B74A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33851502ACC758700B6F076 /* CreateBundleCardView.swift in Sources */,
+				F37DF72D2AC9E37D00B64858 /* CoinRowView.swift in Sources */,
+				F338517F2ACF469600B6F076 /* DetailViewModel.swift in Sources */,
+				F3BB33372AC9BD080054B74A /* CardDetailView.swift in Sources */,
+				F3BB33242AC92B800054B74A /* AnimationUtility.swift in Sources */,
+				F33851742ACE62BB00B6F076 /* PortfolioStatisticsView.swift in Sources */,
+				F33851762ACE642C00B6F076 /* PortfolioStatisticsModel.swift in Sources */,
+				F37DF7362ACA0B7A00B64858 /* CoinDataService.swift in Sources */,
+				F3BB33352AC9BB320054B74A /* CircleButtonView.swift in Sources */,
+				F33851522ACC768400B6F076 /* CustomLinks.swift in Sources */,
+				F338515E2ACCA6A600B6F076 /* PortfolioView.swift in Sources */,
+				F33851832ACF4A3500B6F076 /* CoinDetailDataService.swift in Sources */,
+				F33851542ACC87E400B6F076 /* StatisticModel.swift in Sources */,
+				F320B0932ACA759E00F41E68 /* NetworkingManager.swift in Sources */,
+				F3E7615B2AD2F0200020FC80 /* TransparentBlurView.swift in Sources */,
+				F3BB333C2AC9D9E00054B74A /* CoinModel.swift in Sources */,
+				F3542B732ACBBE95004AEDFC /* LocalFileManager.swift in Sources */,
+				F33851872ACFBB0A00B6F076 /* Date.swift in Sources */,
+				F37DF7312AC9E71800B64858 /* Double.swift in Sources */,
+				F3E761592AD250A90020FC80 /* String.swift in Sources */,
+				F3BB330E2AC913510054B74A /* ToshiApp.swift in Sources */,
+				F338515A2ACC8EAA00B6F076 /* MarketData.swift in Sources */,
+				F33851472ACBCCB500B6F076 /* SearchBarView.swift in Sources */,
+				F338516A2ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld in Sources */,
+				F338517A2ACF24AF00B6F076 /* DetailView.swift in Sources */,
+				F3BB332C2AC9420C0054B74A /* HomeView.swift in Sources */,
+				F3BB33392AC9BE6A0054B74A /* CardGridView.swift in Sources */,
+				F3BB331E2AC922C50054B74A /* Color.swift in Sources */,
+				F338514B2ACC736300B6F076 /* CardSettingsView.swift in Sources */,
+				F338515C2ACC93CE00B6F076 /* MarketDataService.swift in Sources */,
+				F33851492ACBD03600B6F076 /* UIApplication.swift in Sources */,
+				F33851622ACCF80C00B6F076 /* Enums.swift in Sources */,
+				F33851852ACF8A2300B6F076 /* ChartView.swift in Sources */,
+				F320B0962ACA7FC300F41E68 /* CoinImageView.swift in Sources */,
+				F338514E2ACC750900B6F076 /* HalfModalView.swift in Sources */,
+				F33851562ACC891500B6F076 /* StatisticView.swift in Sources */,
+				F33851812ACF4A0200B6F076 /* CoinDetailViewModel.swift in Sources */,
+				F338518E2AD08EF200B6F076 /* InfoButton.swift in Sources */,
+				F33851672ACD08D000B6F076 /* CoinLogoView.swift in Sources */,
+				F338516C2ACDF4E200B6F076 /* PortfolioDataService.swift in Sources */,
+				F3E7615D2AD2F9150020FC80 /* DetailStatisticsView.swift in Sources */,
+				F3BB33212AC92B420054B74A /* SplashScreenView.swift in Sources */,
+				F3BB332E2AC942590054B74A /* OnboardingView.swift in Sources */,
+				F37DF7332AC9EF0100B64858 /* HomeViewModel.swift in Sources */,
+				F320B09A2ACA833400F41E68 /* CoinImageViewModel.swift in Sources */,
+				F320B0982ACA81A100F41E68 /* CoinImageService.swift in Sources */,
+				F33851652ACCFF1C00B6F076 /* XMarkButton.swift in Sources */,
+				F33851782ACE7F8800B6F076 /* CardSettingsModalView.swift in Sources */,
+				F37DF72F2AC9E4B900B64858 /* PreviewProvider.swift in Sources */,
+				F33851602ACCAC6C00B6F076 /* PortfolioStatsView.swift in Sources */,
+				F33851582ACC8BE000B6F076 /* HomeStatsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F3BB33172AC913520054B74A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3BB33182AC913520054B74A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F3BB331A2AC913520054B74A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Toshi/Toshi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Toshi/Preview Content\"";
+				DEVELOPMENT_TEAM = GZ2BM4VMQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Toshi;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lassidesign.Toshi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F3BB331B2AC913520054B74A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Toshi/Toshi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Toshi/Preview Content\"";
+				DEVELOPMENT_TEAM = GZ2BM4VMQU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Toshi;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lassidesign.Toshi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3BB33052AC913510054B74A /* Build configuration list for PBXProject "Toshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BB33172AC913520054B74A /* Debug */,
+				F3BB33182AC913520054B74A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3BB33192AC913520054B74A /* Build configuration list for PBXNativeTarget "Toshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BB331A2AC913520054B74A /* Debug */,
+				F3BB331B2AC913520054B74A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F33851682ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F33851692ACDF45100B6F076 /* PortfolioContainer.xcdatamodel */,
+			);
+			currentVersion = F33851692ACDF45100B6F076 /* PortfolioContainer.xcdatamodel */;
+			path = PortfolioContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3BB33022AC913510054B74A /* Project object */;
+}
