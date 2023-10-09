@@ -23,9 +23,6 @@ extension View {
     func slideUp() -> some View {
         self.modifier(SlideUp())
     }
-    func slideUpTwo(progress: Double) -> some View {
-        self.modifier(SlideUpTwo(progress: progress))
-    }
     func slideLeft() -> some View {
         self.modifier(SlideLeft())
     }
@@ -61,7 +58,7 @@ struct FadeInEffect: ViewModifier {
         content
             .opacity(isShowing ? 1 : 0)
             .onAppear {
-                withAnimation(.easeInOut(duration: 0.15)) {
+                withAnimation(.easeInOut(duration: 0.1)) {
                     isShowing = true
                 }
             }
@@ -70,23 +67,21 @@ struct FadeInEffect: ViewModifier {
 
 struct SlideUp: ViewModifier {
     @State private var slideUpAnimation = false
+    @State private var isShowing = false
 
     func body(content: Content) -> some View {
         content
             .offset(y: slideUpAnimation ? 0 : 10)
+            .opacity(isShowing ? 1 : 0)
             .onAppear {
-                withAnimation(.easeOut(duration: 0.2)) {
-                    self.slideUpAnimation = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    withAnimation(.easeOut(duration: 0.1)) {
+                        self.slideUpAnimation = true
+                        isShowing = true
+
+                    }
                 }
             }
-    }
-}
-struct SlideUpTwo: ViewModifier {
-    var progress: Double
-
-    func body(content: Content) -> some View {
-        content
-            .offset(y: CGFloat(50 * progress))
     }
 }
 

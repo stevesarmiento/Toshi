@@ -129,88 +129,34 @@ struct DetailView: View {
                     descriptionTitle
                         .padding(.top, 20)
                     Divider()
-                    ZStack {
-                        if let coinDescription = vm.coinDescription,
-                           !coinDescription.isEmpty {
-                            VStack(alignment: .leading){
-                                Text(coinDescription)
-                                    .lineLimit(showFullDescription ? nil : 3)
-                                    .font(.callout)
-                                    .foregroundColor(Color.theme.accent.opacity(0.5))
-                                    .overlay(
-                                        LinearGradient(gradient: Gradient(colors: [Color.clear, Color.theme.background.opacity(showFullDescription ? 0 : 0.5)]), startPoint: .center, endPoint: .bottom)
-                                    )
-                                
-                                Button(action: {
-                                    withAnimation(.easeInOut(duration: 0.15)){
-                                        showFullDescription.toggle()
-                                    }
-                                }, label: {
-                                    HStack {
-                                        Text(showFullDescription ? "Read less" : "Read more")
-                                            .font(.callout)
-                                            .bold()
-                                        Image(systemName: "chevron.down")
-                                            .rotationEffect(.degrees(showFullDescription ? 180 : 0))
-                                            .bold()
-                                    }
-                                    .padding(.vertical, 4)
-                                })
-                                .accentColor(.blue)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        }
-                    }
+                        descriptionSection
                     
-                    overviewTitle
-                        .padding(.top, 20)
-                    overviewGird
-                        .padding(5)
-                        .background(
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color.theme.accent.opacity(0.05))
-                        )
+                    VStack {
+                        overviewTitle
+                            .padding(.top, 20)
+                        overviewGird
+                            .padding(5)
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.theme.accent.opacity(0.05))
+                            )
 
-                    additoinalTitle
-                        .padding(.top, 20)
+                        additoinalTitle
+                            .padding(.top, 20)
 
-                    additionalGrid
-                        .padding(20)
-                        .background(
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color.theme.accent.opacity(0.05))
-                        )
-                    
-                    linksTitle
-                        .padding(.top, 20)
-                    HStack {
-                        if let websiteString = vm.websiteURL,
-                           let url = URL(string: websiteString) {
-                            Button(action: {
-                                UIApplication.shared.open(url)
-                            }) {
-                                HStack {
-                                    Text("Website")
-                                        .font(.caption)
-                                        .foregroundColor(Color.theme.accent.opacity(0.5))
-                                    Image(systemName: "chevron.right")
-                                        .font(.caption)
-                                        .foregroundColor(Color.theme.accent.opacity(0.2))
-                                }
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 5)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 50)
-                                        .fill(Color.theme.accent.opacity(0.1))
-                                )
-                            }
-                        }
-    //                    if let redditString = vm.redditURL,
-    //                       let url = URL(string: redditString) {
-    //                        Link("reddit", destination: url)
-    //                    }
+                        additionalGrid
+                            .padding(20)
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.theme.accent.opacity(0.05))
+                            )
+                        
+                        linksTitle
+                            .padding(.top, 20)
+                        linkieSection
                     }
-                    .padding(.vertical, 10)
+                    .slideUp()
+
                 }
                 .padding()
             }
@@ -315,4 +261,103 @@ extension DetailView {
                 }
             })
     }
+    
+    private var linkieSection: some View {
+        HStack {
+            if let websiteString = vm.websiteURL,
+               let url = URL(string: websiteString) {
+                Button(action: {
+                    UIApplication.shared.open(url)
+                }) {
+                    HStack {
+                        Text("Website")
+                            .font(.caption)
+                            .foregroundColor(Color.theme.accent.opacity(0.5))
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundColor(Color.theme.accent.opacity(0.2))
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 5)
+                    .background(
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color.theme.accent.opacity(0.1))
+                    )
+                }
+            }
+//                    if let redditString = vm.redditURL,
+//                       let url = URL(string: redditString) {
+//                        Link("reddit", destination: url)
+//                    }
+        }
+        .padding(.vertical, 10)
+    }
+    
+    private var descriptionSection: some View {
+        VStack(alignment: .leading){
+            Text(vm.coinDescription ?? placeholder)
+                .lineLimit(showFullDescription ? nil : 3)
+                .font(.callout)
+                .foregroundColor(Color.theme.accent.opacity(0.5))
+                .overlay(
+                    LinearGradient(gradient: Gradient(colors: [Color.clear, Color.theme.background.opacity(showFullDescription ? 0 : 0.5)]), startPoint: .center, endPoint: .bottom)
+                )
+            
+            Button(action: {
+                withAnimation(.easeInOut(duration: 0.15)){
+                    showFullDescription.toggle()
+                }
+            }, label: {
+                HStack {
+                    Text(showFullDescription ? "Read less" : "Read more")
+                        .font(.callout)
+                        .bold()
+                    Image(systemName: "chevron.down")
+                        .rotationEffect(.degrees(showFullDescription ? 180 : 0))
+                        .bold()
+                }
+                .padding(.vertical, 4)
+            })
+            .accentColor(.blue)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var placeholder: String {
+        return Array(repeating: " ", count: 100).joined(separator: " ")
+    }
+//    private var descriptionSection: some View {
+//        ZStack {
+//            if let coinDescription = vm.coinDescription,
+//               !coinDescription.isEmpty {
+//                VStack(alignment: .leading){
+//                    Text(coinDescription)
+//                        .lineLimit(showFullDescription ? nil : 3)
+//                        .font(.callout)
+//                        .foregroundColor(Color.theme.accent.opacity(0.5))
+//                        .overlay(
+//                            LinearGradient(gradient: Gradient(colors: [Color.clear, Color.theme.background.opacity(showFullDescription ? 0 : 0.5)]), startPoint: .center, endPoint: .bottom)
+//                        )
+//                    
+//                    Button(action: {
+//                        withAnimation(.easeInOut(duration: 0.15)){
+//                            showFullDescription.toggle()
+//                        }
+//                    }, label: {
+//                        HStack {
+//                            Text(showFullDescription ? "Read less" : "Read more")
+//                                .font(.callout)
+//                                .bold()
+//                            Image(systemName: "chevron.down")
+//                                .rotationEffect(.degrees(showFullDescription ? 180 : 0))
+//                                .bold()
+//                        }
+//                        .padding(.vertical, 4)
+//                    })
+//                    .accentColor(.blue)
+//                }
+//                .frame(maxWidth: .infinity, alignment: .leading)
+//            }
+//        }
+//    }
 }

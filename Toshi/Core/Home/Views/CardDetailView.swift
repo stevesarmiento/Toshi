@@ -22,7 +22,7 @@ struct CardDetailView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                gradient: Gradient(colors: [Color.black.opacity(1), Color.black.opacity(1)]),
+                gradient: Gradient(colors: [Color.theme.background, Color.black.opacity(1)]),
                 startPoint: .top,
                 endPoint: .bottom
             )

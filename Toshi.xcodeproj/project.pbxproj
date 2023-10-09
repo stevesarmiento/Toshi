@@ -245,16 +245,12 @@
 		F3BB331F2AC92B250054B74A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3BB33382AC9BE6A0054B74A /* CardGridView.swift */,
+				F3BB33362AC9BD080054B74A /* CardDetailView.swift */,
 				F3BB332B2AC9420C0054B74A /* HomeView.swift */,
-				F33851572ACC8BE000B6F076 /* HomeStatsView.swift */,
 				F3BB33202AC92B420054B74A /* SplashScreenView.swift */,
 				F3BB332D2AC942590054B74A /* OnboardingView.swift */,
-				F3BB33362AC9BD080054B74A /* CardDetailView.swift */,
-				F3BB33382AC9BE6A0054B74A /* CardGridView.swift */,
-				F37DF72C2AC9E37D00B64858 /* CoinRowView.swift */,
 				F338514A2ACC736300B6F076 /* CardSettingsView.swift */,
-				F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */,
-				F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */,
 				F338515D2ACCA6A600B6F076 /* PortfolioView.swift */,
 			);
 			path = Views;
@@ -313,6 +309,10 @@
 		F3BB33322AC9BB160054B74A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F33851572ACC8BE000B6F076 /* HomeStatsView.swift */,
+				F37DF72C2AC9E37D00B64858 /* CoinRowView.swift */,
+				F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */,
+				F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */,
 				F320B0942ACA7FB500F41E68 /* CoinImage */,
 				F3BB33332AC9BB1E0054B74A /* CircleButton */,
 				F33851462ACBCCB500B6F076 /* SearchBarView.swift */,

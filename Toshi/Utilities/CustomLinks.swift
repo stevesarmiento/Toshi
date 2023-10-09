@@ -139,7 +139,6 @@ struct CustomLinkView: View {
         }
         .pressAnimation()
         .opacity(1 - progress)
-        .modifier(SlideUpTwo(progress: progress))
     }
 }
 

@@ -20,38 +20,18 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
+            
             if selectedTab == 0 {
-                Group {
-                    Spacer()
-                        .frame(height: 25)
-                    
-                    VStack(alignment: .leading) {
-                        CardGridView(showingDetail: $showingDetail, isCardSettingsViewShowing: $isCardSettingsViewShowing)
-                            //.matchedGeometryEffect(id: "settings", in: animation)
-
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                }
-                .transition(makeTransition())
-
+                
+                cardGridSection
+                    .fadeInEffect()
+                
             } else if selectedTab == 1 {
-                Group {
-                    CardDetailView(isPresented: $showingDetail, selectedCoin: $selectedCoin, animation: _animation)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .edgesIgnoringSafeArea(.all)
-                }
-                .transition(makeTransition())
 
+                coinDetailPage
             } else {
-                // Placeholder for third tab
-                Group {
-                    Text("Coming soon...")
-                        .foregroundStyle(Color.theme.accent.opacity(0.3))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .edgesIgnoringSafeArea(.all)
-                }  
-                .transition(makeTransition())
+                
+                newsPage
             }
         }
         .animation(.easeInOut(duration: 0.15), value: selectedTab)
@@ -128,6 +108,43 @@ struct HomeView: View {
 }
 
 extension HomeView {
+    
+    private var newsPage: some View {
+        
+        Group {
+            Text("Coming soon...")
+                .foregroundStyle(Color.theme.accent.opacity(0.3))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+        }
+        .transition(makeTransition())
+        
+    }
+    
+    private var coinDetailPage: some View {
+        Group {
+            CardDetailView(isPresented: $showingDetail, selectedCoin: $selectedCoin, animation: _animation)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+        }
+        .transition(makeTransition())
+    }
+    
+    private var cardGridSection: some View {
+        Group {
+            Spacer()
+                .frame(height: 25)
+            
+            VStack(alignment: .leading) {
+                CardGridView(showingDetail: $showingDetail, isCardSettingsViewShowing: $isCardSettingsViewShowing)
+                    //.matchedGeometryEffect(id: "settings", in: animation)
+
+                Spacer()
+            }
+            .padding(.horizontal)
+        }
+        .transition(makeTransition())
+    }
     
     private func makeTransition() -> AnyTransition {
         let insertionEdge: Edge = selectedTab > previousTab ? .trailing : .leading
