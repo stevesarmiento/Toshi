@@ -58,8 +58,9 @@
 		F3BB33392AC9BE6A0054B74A /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB33382AC9BE6A0054B74A /* CardGridView.swift */; };
 		F3BB333C2AC9D9E00054B74A /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB333B2AC9D9E00054B74A /* CoinModel.swift */; };
 		F3E761592AD250A90020FC80 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761582AD250A90020FC80 /* String.swift */; };
-		F3E7615B2AD2F0200020FC80 /* TransparentBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7615A2AD2F0200020FC80 /* TransparentBlurView.swift */; };
 		F3E7615D2AD2F9150020FC80 /* DetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */; };
+		F3E7616F2AD4FB880020FC80 /* PortfolioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */; };
+		F3E761722AD4FC920020FC80 /* FavoritesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761712AD4FC920020FC80 /* FavoritesGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,8 +117,9 @@
 		F3BB33382AC9BE6A0054B74A /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
 		F3BB333B2AC9D9E00054B74A /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		F3E761582AD250A90020FC80 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		F3E7615A2AD2F0200020FC80 /* TransparentBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentBlurView.swift; sourceTree = "<group>"; };
 		F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStatisticsView.swift; sourceTree = "<group>"; };
+		F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioManager.swift; sourceTree = "<group>"; };
+		F3E761712AD4FC920020FC80 /* FavoritesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 		F3BB330C2AC913510054B74A /* Toshi */ = {
 			isa = PBXGroup;
 			children = (
+				F3E7616D2AD4FB780020FC80 /* Managers */,
 				F3BB330D2AC913510054B74A /* ToshiApp.swift */,
 				F3BB33252AC930450054B74A /* Core */,
 				F3BB333A2AC9D9C90054B74A /* Models */,
@@ -215,7 +218,6 @@
 				F3BB331C2AC922B40054B74A /* Extensions */,
 				F3BB33112AC913520054B74A /* Assets.xcassets */,
 				F3BB33132AC913520054B74A /* Toshi.entitlements */,
-				F3BB332F2AC9AF210054B74A /* Managers */,
 				F3BB33142AC913520054B74A /* Preview Content */,
 			);
 			path = Toshi;
@@ -250,8 +252,8 @@
 				F3BB332B2AC9420C0054B74A /* HomeView.swift */,
 				F3BB33202AC92B420054B74A /* SplashScreenView.swift */,
 				F3BB332D2AC942590054B74A /* OnboardingView.swift */,
-				F338514A2ACC736300B6F076 /* CardSettingsView.swift */,
 				F338515D2ACCA6A600B6F076 /* PortfolioView.swift */,
+				F3E761712AD4FC920020FC80 /* FavoritesGridView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,11 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				F3BB33232AC92B800054B74A /* AnimationUtility.swift */,
-				F320B0922ACA759E00F41E68 /* NetworkingManager.swift */,
-				F3542B722ACBBE95004AEDFC /* LocalFileManager.swift */,
 				F33851512ACC768400B6F076 /* CustomLinks.swift */,
 				F33851612ACCF80C00B6F076 /* Enums.swift */,
-				F3E7615A2AD2F0200020FC80 /* TransparentBlurView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -272,6 +271,7 @@
 		F3BB33252AC930450054B74A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F3E761702AD4FC0A0020FC80 /* Settings */,
 				F3BB33322AC9BB160054B74A /* Components */,
 				F3BB33282AC930910054B74A /* Home */,
 				F338517B2ACF24EE00B6F076 /* Detail */,
@@ -297,13 +297,6 @@
 				F3BB33272AC930840054B74A /* ViewModels */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		F3BB332F2AC9AF210054B74A /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		F3BB33322AC9BB160054B74A /* Components */ = {
@@ -342,6 +335,24 @@
 				F33851682ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3E7616D2AD4FB780020FC80 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F320B0922ACA759E00F41E68 /* NetworkingManager.swift */,
+				F3542B722ACBBE95004AEDFC /* LocalFileManager.swift */,
+				F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F3E761702AD4FC0A0020FC80 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F338514A2ACC736300B6F076 /* CardSettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +439,6 @@
 				F33851832ACF4A3500B6F076 /* CoinDetailDataService.swift in Sources */,
 				F33851542ACC87E400B6F076 /* StatisticModel.swift in Sources */,
 				F320B0932ACA759E00F41E68 /* NetworkingManager.swift in Sources */,
-				F3E7615B2AD2F0200020FC80 /* TransparentBlurView.swift in Sources */,
 				F3BB333C2AC9D9E00054B74A /* CoinModel.swift in Sources */,
 				F3542B732ACBBE95004AEDFC /* LocalFileManager.swift in Sources */,
 				F33851872ACFBB0A00B6F076 /* Date.swift in Sources */,
@@ -453,6 +463,7 @@
 				F33851812ACF4A0200B6F076 /* CoinDetailViewModel.swift in Sources */,
 				F338518E2AD08EF200B6F076 /* InfoButton.swift in Sources */,
 				F33851672ACD08D000B6F076 /* CoinLogoView.swift in Sources */,
+				F3E761722AD4FC920020FC80 /* FavoritesGridView.swift in Sources */,
 				F338516C2ACDF4E200B6F076 /* PortfolioDataService.swift in Sources */,
 				F3E7615D2AD2F9150020FC80 /* DetailStatisticsView.swift in Sources */,
 				F3BB33212AC92B420054B74A /* SplashScreenView.swift in Sources */,
@@ -464,6 +475,7 @@
 				F33851782ACE7F8800B6F076 /* CardSettingsModalView.swift in Sources */,
 				F37DF72F2AC9E4B900B64858 /* PreviewProvider.swift in Sources */,
 				F33851602ACCAC6C00B6F076 /* PortfolioStatsView.swift in Sources */,
+				F3E7616F2AD4FB880020FC80 /* PortfolioManager.swift in Sources */,
 				F33851582ACC8BE000B6F076 /* HomeStatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

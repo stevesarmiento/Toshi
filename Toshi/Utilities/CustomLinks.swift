@@ -185,6 +185,5 @@ struct KeyLinkView: View {
         }
         .pressAnimation()
         .opacity(1)
-        //.modifier(SlideUpTwo(progress: progress))
     }
 }

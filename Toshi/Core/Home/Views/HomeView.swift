@@ -23,8 +23,8 @@ struct HomeView: View {
             
             if selectedTab == 0 {
                 
-                cardGridSection
-                    .fadeInEffect()
+                homeSection
+
                 
             } else if selectedTab == 1 {
 
@@ -34,6 +34,9 @@ struct HomeView: View {
                 newsPage
             }
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.black, Color.theme.background]), startPoint: .bottom, endPoint: .top)
+        )
         .animation(.easeInOut(duration: 0.15), value: selectedTab)
         .overlay(
             HStack {
@@ -130,14 +133,16 @@ extension HomeView {
         .transition(makeTransition())
     }
     
-    private var cardGridSection: some View {
+    private var homeSection: some View {
         Group {
             Spacer()
                 .frame(height: 25)
             
             VStack(alignment: .leading) {
                 CardGridView(showingDetail: $showingDetail, isCardSettingsViewShowing: $isCardSettingsViewShowing)
-                    //.matchedGeometryEffect(id: "settings", in: animation)
+                    .fadeInEffect()
+
+                FavoritesGridView()
 
                 Spacer()
             }
