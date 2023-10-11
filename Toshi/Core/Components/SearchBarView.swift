@@ -20,14 +20,18 @@ struct SearchBarView: View {
                 .disableAutocorrection(true)
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(Color.theme.accent)
+                        .resizable()
+                        .frame(width: 27, height: 27)
+                        .foregroundColor(Color.theme.accent.opacity(0.6))
                         .padding()
                         .offset(x: 10)
+                        
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture {
                             UIApplication.shared.endEditing()
                             searchText = ""
                         }
+                        .pressAnimation()
                     
                     ,alignment: .trailing
                 )

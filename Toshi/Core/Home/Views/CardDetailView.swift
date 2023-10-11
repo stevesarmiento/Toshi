@@ -112,7 +112,7 @@ extension CardDetailView {
             HStack{
                 Text("Coin")
                 Image(systemName: "chevron.down")
-                    //.opacity((vm.sortOptions == .rank || vm.sortOptions == .rankReversed) ? 1.0 : 0.0)
+                    .opacity((vm.sortOptions == .rank || vm.sortOptions == .rankReversed) ? 1.0 : 0.0)
                     .rotationEffect(Angle (degrees: vm.sortOptions == .rank  ? 0 : 180))
             }
             .onTapGesture {
@@ -125,7 +125,7 @@ extension CardDetailView {
                 Text("Price")
                     .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
                 Image(systemName: "chevron.down")
-                    //.opacity((vm.sortOptions == .price || vm.sortOptions == .priceReversed) ? 1.0 : 0.0)
+                    .opacity((vm.sortOptions == .price || vm.sortOptions == .priceReversed) ? 1.0 : 0.0)
                     .rotationEffect(Angle (degrees: vm.sortOptions == .price  ? 0 : 180))
             }
             .onTapGesture {
