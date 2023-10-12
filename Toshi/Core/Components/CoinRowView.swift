@@ -20,7 +20,7 @@ struct CoinRowView: View {
                 FavoriteIconView(isFavorited: isFavorited)
                 Spacer()
             }
-            .frame(height: 35)
+            .frame(height: 30)
             .padding()
             //.padding(.vertical, 5)
             .background(
@@ -41,7 +41,7 @@ struct CoinRowView: View {
                         ZStack {
                             FavoriteIconCircleView(isFavorited: isFavorited)
                                 .opacity(showCircle ? 1 : 0)
-                                .offset(x: -10, y: -15)
+                                .offset(x: -8, y: -15)
                         }
                     )
                 Text(coin.symbol.uppercased())
@@ -73,7 +73,7 @@ struct CoinRowView: View {
                 }
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
             }
-            .frame(height: 35)
+            .frame(height: 30)
             .font(.subheadline)
             .padding()
             .background(
