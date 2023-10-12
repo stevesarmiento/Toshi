@@ -63,7 +63,8 @@ struct VisualEffectView: UIViewRepresentable {
 
 struct DetailView: View {
 
-    
+        @State private var isFavorited = false
+
     @StateObject private var vm: CoinDetailViewModel
     @State private var showFullDescription: Bool = false
     private let columns3: [GridItem] = [
@@ -104,8 +105,24 @@ struct DetailView: View {
                             )
                     }
                     Spacer()
+                    Button(action: {
+                            // withAnimation(.linear(duration: 1)){
+                                isFavorited.toggle()
+                            // }
+                            let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                            impactMed.impactOccurred()
+                            
+                        }) {
+                            VStack {
+                                FavoriteIconView(isFavorited: isFavorited)
+                                Spacer()
+                            }
+                        }
+                        .buttonStyle(NoOpacityButtonStyle())                    
+
+
                 }
-                .padding()
+                .padding(.horizontal, 30)
                 
                 ChartView(coin: vm.coin)
                 
@@ -142,13 +159,22 @@ struct DetailView: View {
                     .slideUp()
 
                 }
-                .padding()
+                .padding(.horizontal, 30)
             }
+        }
+        .onAppear {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
 }
 
 extension DetailView {
+    struct NoOpacityButtonStyle: ButtonStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .opacity(configuration.isPressed ? 1 : 1)
+        }
+    }
     private var descriptionTitle: some View {
         HStack{
             Image(systemName: "text.alignleft")

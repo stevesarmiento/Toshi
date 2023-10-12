@@ -14,13 +14,17 @@ import SwiftUI
 
     var body: some View {
         Image(systemName: getIconName())
+            .frame(height: 22)
             .foregroundColor(getIconColor())
-            .font(.system(size: 18))
+            .bold()
+            .font(.system(size: 20))
             .scaleEffect(scaleEffect)
             .onChange(of: isFavorited, perform: { newValue in
                 if newValue {
-                    withAnimation(.easeInOut(duration: 0.1)) {
+                    withAnimation(.easeIn(duration: 0.1)) {
                         scaleEffect = 1
+                        let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                        impactMed.impactOccurred()
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         withAnimation(.easeInOut(duration: 0.1)) {
@@ -29,8 +33,10 @@ import SwiftUI
                     }
                 } else {
                     isUnfavoriting = true
-                    withAnimation(.easeInOut(duration: 0.1)) {
+                    withAnimation(.easeOut(duration: 0.1)) {
                         scaleEffect = 1
+                        let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                        impactMed.impactOccurred()
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         isUnfavoriting = false
@@ -44,9 +50,9 @@ import SwiftUI
         
         private func getIconName() -> String {
             if isUnfavoriting {
-                return "heart.slash.fill"
+                return "bookmark.slash.fill"
             } else {
-                return isFavorited ? "heart.fill" : "heart"
+                return isFavorited ? "bookmark.fill" : "bookmark.fill"
             }
         }
         
@@ -54,7 +60,7 @@ import SwiftUI
             if isUnfavoriting {
                 return .gray
             } else {
-                return isFavorited ? .red : .gray
+                return isFavorited ? .purple : .gray
             }
         }
     }

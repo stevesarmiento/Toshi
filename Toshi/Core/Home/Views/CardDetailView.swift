@@ -32,52 +32,25 @@ struct CardDetailView: View {
                 Spacer()
                     .frame(height: 50)
                 
-//                HStack {
-//                    Button(action: {
-//                        isPresented = false
-//                        let impactMed = UIImpactFeedbackGenerator(style: .soft)
-//                        impactMed.impactOccurred()
-//                    }) {
-//                        ZStack {
-//                            CircleButtonView(iconName: "heart.fill")
-//                                .matchedGeometryEffect(id: "walletSymbol", in: animation)
-//                        }
-//                        
-//                        Text("hello mango")
-//                            .bold()
-//                            .font(.system(size: 20))
-//                            .foregroundColor(.white)
-//                    }
-//                    Spacer()
-//                }
-                
                 SearchBarView(searchText: $vm.searchText)
 
                 columnHeaders
                                 
                 allCoinsList
             }.padding()
-            // if let coin = selectedCoin {
-            //     DetailView(coin: $selectedCoin)
-            // }
         }
         .matchedGeometryEffect(id: "detail", in: animation)
-//        .background(
-//            .NavigationLink(
-//                destination: DetailView(coin: $selectedCoin),
-//                isActive: $showDetailView,
-//                label: { EmptyView() })
-//        )
     }
 }
 
 extension CardDetailView {
     struct NoOpacityButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .opacity(configuration.isPressed ? 1 : 1)
+        func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .opacity(configuration.isPressed ? 1 : 1)
+        }
     }
-}
+    
     private var allCoinsList: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack {
@@ -90,18 +63,6 @@ extension CardDetailView {
                     .buttonStyle(NoOpacityButtonStyle())                    
                     .pressAnimation()
                 }
-//                ForEach(vm.allCoins) { coin in
-//                    NavigationLink(
-//                        destination: DetailView(coin: $selectedCoin),
-//                        tag: coin,
-//                        selection: $selectedCoin
-//                    ) {
-//                        CoinRowView(coin: coin, showHoldingsColumn: false)
-//                            .onTapGesture {
-//                                segue(coin: coin)
-//                            }
-//                    }
-//                }
             }
         }.refreshable {
             print("Refresh action triggered")
@@ -143,6 +104,21 @@ extension CardDetailView {
 
             
             Button(action: {
+//                withAnimation(.linear(duration: 1)){
+//                    vm.reloadData()
+//                }
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
+                
+            }) {
+                VStack {
+                    Image(systemName: "line.3.horizontal.decrease")
+                        .font(.system(size: 16))
+                        .bold()
+                        .foregroundColor(Color.theme.accent.opacity(0.3))
+                }
+            }
+            Button(action: {
                 withAnimation(.linear(duration: 1)){
                     vm.reloadData()
                 }
@@ -151,12 +127,14 @@ extension CardDetailView {
                 
             }) {
                 VStack {
-                    Image(systemName: "goforward")
-                        .font(.system(size: 18))
+                    Image(systemName: "ellipsis")
+                        .font(.system(size: 16))
                         .bold()
                         .foregroundColor(Color.theme.accent.opacity(0.3))
                 }
-            }.rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0), anchor: .center)
+                .rotationEffect(Angle(degrees: 90))
+            }
+            
         }
         .font(.caption)
         .foregroundColor(Color.theme.accent.opacity(0.7))

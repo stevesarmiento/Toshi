@@ -15,13 +15,12 @@ import SwiftUI
 
     var body: some View {
             ZStack {
-                Circle().fill(isFavorited ? Color.red : Color.gray)
+                Circle().fill(isFavorited ? Color.purple : Color.gray)
                     .frame(width: 22, height: 22)
                 Image(systemName: getIconName())
                     .foregroundColor(getIconColor())
                     .font(.system(size: 13))
-                    .padding()
-                    
+                    .padding()                    
             }
             .scaleEffect(scaleEffect)
             .onChange(of: isFavorited, perform: { newValue in
@@ -51,9 +50,9 @@ import SwiftUI
         
         private func getIconName() -> String {
             if isUnfavoriting {
-                return "heart.slash.fill"
+                return "bookmark.slash.fill"
             } else {
-                return isFavorited ? "heart.fill" : "heart.fill"
+                return isFavorited ? "bookmark.fill" : "bookmark.fill"
             }
         }
         
