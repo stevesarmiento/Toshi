@@ -20,8 +20,9 @@ struct CoinRowView: View {
                 FavoriteIconView(isFavorited: isFavorited)
                 Spacer()
             }
+            .frame(height: 35)
             .padding()
-            .padding(.vertical, 7)
+            //.padding(.vertical, 5)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                 .foregroundColor(.white.opacity(0.1))
@@ -29,7 +30,7 @@ struct CoinRowView: View {
             HStack(spacing: 0) {
                 Text("\(coin.rank)")
                     .font(.caption)
-                    .foregroundColor(Color.theme.accent)
+                    .foregroundColor(Color.theme.accent.opacity(0.5))
                     .frame(minWidth: 20)
                 CoinImageView(coin: coin)
                     .foregroundColor(Color.theme.accent)
@@ -45,6 +46,7 @@ struct CoinRowView: View {
                     )
                 Text(coin.symbol.uppercased())
                     .font(.headline)
+                    .bold()
                     .padding(.leading, 7)
                     .foregroundColor(Color.theme.accent)
                 Spacer()
@@ -71,8 +73,9 @@ struct CoinRowView: View {
                 }
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
             }
+            .frame(height: 35)
             .font(.subheadline)
-            .padding(15)
+            .padding()
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .foregroundColor(Color.theme.background)

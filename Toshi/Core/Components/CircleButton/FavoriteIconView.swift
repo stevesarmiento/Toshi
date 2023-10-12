@@ -17,28 +17,25 @@ import SwiftUI
             .foregroundColor(getIconColor())
             .font(.system(size: 18))
             .scaleEffect(scaleEffect)
-            // .padding()
-            // .frame(width: 23, height: 23)
-            // .background(Circle().fill(Color.white))
             .onChange(of: isFavorited, perform: { newValue in
                 if newValue {
                     withAnimation(.easeInOut(duration: 0.1)) {
-                        scaleEffect = 1.2
+                        scaleEffect = 1
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         withAnimation(.easeInOut(duration: 0.1)) {
-                            scaleEffect = 1.0
+                            scaleEffect = 1
                         }
                     }
                 } else {
                     isUnfavoriting = true
                     withAnimation(.easeInOut(duration: 0.1)) {
-                        scaleEffect = 1.1
+                        scaleEffect = 1
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         isUnfavoriting = false
                         withAnimation(.easeInOut(duration: 0.1)) {
-                            scaleEffect = 0.9
+                            scaleEffect = 1
                         }
                     }
                 }

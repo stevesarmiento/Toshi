@@ -16,7 +16,7 @@ import SwiftUI
     var body: some View {
             ZStack {
                 Circle().fill(isFavorited ? Color.red : Color.gray)
-                    .frame(width: 21, height: 21)
+                    .frame(width: 22, height: 22)
                 Image(systemName: getIconName())
                     .foregroundColor(getIconColor())
                     .font(.system(size: 13))
