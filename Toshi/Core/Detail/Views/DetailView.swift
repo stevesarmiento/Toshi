@@ -104,22 +104,6 @@ struct DetailView: View {
                             )
                     }
                     Spacer()
-    //                VStack{
-    //                    HStack {
-    //                        // notifications
-    //                        Button(action: {
-    //                            //action goes here
-    //                        }) {
-    //                            Image(systemName: "bell.badge")
-    //                        }
-    //                        .foregroundColor(.white.opacity(0.6))
-    //
-    //                    }
-    //                }
-                    //        VStack{
-                    //        }
-                    //        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    //        .background(Color.theme.background)
                 }
                 .padding()
                 

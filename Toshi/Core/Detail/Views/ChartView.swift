@@ -77,10 +77,11 @@ extension ChartView {
                     
                 }
             }
-            .trim(from:0.1, to: percentage)
-            .stroke(lineColor, style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
+            .trim(from:0, to: percentage)
+            .stroke(lineColor, style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
         }
     }
+
     
     private var charBackground: some View {
         VStack{

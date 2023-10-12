@@ -72,6 +72,12 @@ struct CardDetailView: View {
 }
 
 extension CardDetailView {
+    struct NoOpacityButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 1 : 1)
+    }
+}
     private var allCoinsList: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack {
@@ -81,6 +87,7 @@ extension CardDetailView {
                     }) {
                         CoinRowView(coin: coin, showHoldingsColumn: false)
                     }
+                    .buttonStyle(NoOpacityButtonStyle())                    
                     .pressAnimation()
                 }
 //                ForEach(vm.allCoins) { coin in

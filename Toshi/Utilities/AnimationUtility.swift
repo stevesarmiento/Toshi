@@ -32,6 +32,9 @@ extension View {
     func pressAnimation() -> some View {
         self.modifier(PressAnimation())
     }
+    func scaleUpAnimation() -> some View {
+        self.modifier(ScaleUpAnimation())
+    }
 }
 
 struct WiggleEffect: GeometryEffect {
@@ -48,6 +51,20 @@ struct WiggleEffect: GeometryEffect {
         guard isActive else { return ProjectionTransform() }
         let wiggle = sin(animatableData * .pi * times) * amplitude
         return ProjectionTransform(CGAffineTransform(translationX: wiggle, y: 0))
+    }
+}
+
+struct ScaleUpAnimation: ViewModifier {
+    @State private var isAnimating = false
+
+    func body(content: Content) -> some View {
+        content
+            .scaleEffect(isAnimating ? 2.0 : 1.0)
+            .onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
+                    isAnimating = true
+                }
+            }
     }
 }
 

@@ -10,9 +10,9 @@ import SwiftUI
 struct CoinRowView: View {
     let coin: Coin
     let showHoldingsColumn: Bool
-  //  @EnvironmentObject var walletManager: WalletManager
     @State private var isFavorited = false
     @State private var swipeOffset: CGFloat = 0
+    @State private var showCircle = false // New state variable
 
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct CoinRowView: View {
                 Spacer()
             }
             .padding()
-            .padding(.vertical, 5)
+            .padding(.vertical, 7)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                 .foregroundColor(.white.opacity(0.1))
@@ -32,9 +32,17 @@ struct CoinRowView: View {
                     .foregroundColor(Color.theme.accent)
                     .frame(minWidth: 20)
                 CoinImageView(coin: coin)
+                    .foregroundColor(Color.theme.accent)
                     .frame(width: 30, height: 30)
                     .clipShape(Circle())
                     .padding(.leading, 7)
+                    .overlay(
+                        ZStack {
+                            FavoriteIconCircleView(isFavorited: isFavorited)
+                                .opacity(showCircle ? 1 : 0)
+                                .offset(x: -10, y: -15)
+                        }
+                    )
                 Text(coin.symbol.uppercased())
                     .font(.headline)
                     .padding(.leading, 7)
@@ -64,7 +72,7 @@ struct CoinRowView: View {
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
             }
             .font(.subheadline)
-            .padding(12)
+            .padding(15)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .foregroundColor(Color.theme.background)
@@ -79,6 +87,10 @@ struct CoinRowView: View {
                     .onEnded { value in
                         if self.swipeOffset > 30 {
                             isFavorited.toggle()
+                            showCircle = true // Show the circle
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Hide the circle after 1 second
+                                showCircle = false
+                            }
                             if isFavorited {
                          //       walletManager.selectedWallet?.addToFavorites(coin: coin)
                             } else {
@@ -97,15 +109,11 @@ struct CoinRowView: View {
     }
 }
 
-struct FavoriteIconView: View {
-    let isFavorited: Bool
-
-    var body: some View {
-        Image(systemName: isFavorited ? "heart.fill" : "heart")
-            .foregroundColor(isFavorited ? .red : .gray)
-            .font(.system(size: 18))
-    }
+extension CoinRowView {
+    
 }
+
+
 
 //struct CoinRowView: View {
 //    

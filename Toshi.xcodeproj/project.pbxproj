@@ -61,6 +61,8 @@
 		F3E7615D2AD2F9150020FC80 /* DetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */; };
 		F3E7616F2AD4FB880020FC80 /* PortfolioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */; };
 		F3E761722AD4FC920020FC80 /* FavoritesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761712AD4FC920020FC80 /* FavoritesGridView.swift */; };
+		F3E761742AD7883D0020FC80 /* FavoriteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761732AD7883D0020FC80 /* FavoriteIconView.swift */; };
+		F3E761762AD7A00C0020FC80 /* FavoriteIconCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761752AD7A00C0020FC80 /* FavoriteIconCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStatisticsView.swift; sourceTree = "<group>"; };
 		F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioManager.swift; sourceTree = "<group>"; };
 		F3E761712AD4FC920020FC80 /* FavoritesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesGridView.swift; sourceTree = "<group>"; };
+		F3E761732AD7883D0020FC80 /* FavoriteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconView.swift; sourceTree = "<group>"; };
+		F3E761752AD7A00C0020FC80 /* FavoriteIconCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteIconCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +326,8 @@
 				F33851642ACCFF1C00B6F076 /* XMarkButton.swift */,
 				F3BB33342AC9BB320054B74A /* CircleButtonView.swift */,
 				F338518D2AD08EF200B6F076 /* InfoButton.swift */,
+				F3E761732AD7883D0020FC80 /* FavoriteIconView.swift */,
+				F3E761752AD7A00C0020FC80 /* FavoriteIconCircleView.swift */,
 			);
 			path = CircleButton;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				F3BB33352AC9BB320054B74A /* CircleButtonView.swift in Sources */,
 				F33851522ACC768400B6F076 /* CustomLinks.swift in Sources */,
 				F338515E2ACCA6A600B6F076 /* PortfolioView.swift in Sources */,
+				F3E761762AD7A00C0020FC80 /* FavoriteIconCircleView.swift in Sources */,
 				F33851832ACF4A3500B6F076 /* CoinDetailDataService.swift in Sources */,
 				F33851542ACC87E400B6F076 /* StatisticModel.swift in Sources */,
 				F320B0932ACA759E00F41E68 /* NetworkingManager.swift in Sources */,
@@ -474,6 +481,7 @@
 				F33851652ACCFF1C00B6F076 /* XMarkButton.swift in Sources */,
 				F33851782ACE7F8800B6F076 /* CardSettingsModalView.swift in Sources */,
 				F37DF72F2AC9E4B900B64858 /* PreviewProvider.swift in Sources */,
+				F3E761742AD7883D0020FC80 /* FavoriteIconView.swift in Sources */,
 				F33851602ACCAC6C00B6F076 /* PortfolioStatsView.swift in Sources */,
 				F3E7616F2AD4FB880020FC80 /* PortfolioManager.swift in Sources */,
 				F33851582ACC8BE000B6F076 /* HomeStatsView.swift in Sources */,
