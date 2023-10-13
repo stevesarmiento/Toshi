@@ -118,22 +118,22 @@ extension CardDetailView {
                         .foregroundColor(Color.theme.accent.opacity(0.3))
                 }
             }
-            Button(action: {
-                withAnimation(.linear(duration: 1)){
-                    vm.reloadData()
-                }
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.success)
+            // Button(action: {
+            //     withAnimation(.linear(duration: 1)){
+            //         vm.reloadData()
+            //     }
+            //     let generator = UINotificationFeedbackGenerator()
+            //     generator.notificationOccurred(.success)
                 
-            }) {
-                VStack {
-                    Image(systemName: "ellipsis")
-                        .font(.system(size: 16))
-                        .bold()
-                        .foregroundColor(Color.theme.accent.opacity(0.3))
-                }
-                .rotationEffect(Angle(degrees: 90))
-            }
+            // }) {
+            //     VStack {
+            //         Image(systemName: "ellipsis")
+            //             .font(.system(size: 16))
+            //             .bold()
+            //             .foregroundColor(Color.theme.accent.opacity(0.3))
+            //     }
+            //     .rotationEffect(Angle(degrees: 90))
+            // }
             
         }
         .font(.caption)
