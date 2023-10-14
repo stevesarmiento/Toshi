@@ -91,7 +91,7 @@ struct CoinRowView: View {
                         if self.swipeOffset > 30 {
                             isFavorited.toggle()
                             showCircle = true // Show the circle
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Hide the circle after 1 second
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 showCircle = false
                             }
                             if isFavorited {
@@ -116,56 +116,3 @@ extension CoinRowView {
     
 }
 
-
-
-//struct CoinRowView: View {
-//    
-//    let coin: Coin
-//    let showHoldingsColumn: Bool
-//    
-//    var body: some View {
-//        HStack(spacing: 0) {
-//            Text("\(coin.rank)")
-//                .font(.caption)
-//                .foregroundColor(Color.theme.accent)
-//                .frame(minWidth: 30)
-//            CoinImageView(coin: coin)
-//                .frame(width: 30, height: 30)
-//                .clipShape(Circle())
-//            Text(coin.symbol.uppercased())
-//                .font(.headline)
-//                .padding(.leading, 6)
-//                .foregroundColor(Color.theme.accent)
-//            Spacer()
-//            
-//            if showHoldingsColumn {
-//                VStack(alignment: .trailing) {
-//                    Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
-//                        .bold()
-//                    Text((coin.currentHoldings ?? 0).asNumberString())
-//                }
-//                .foregroundColor(Color.theme.accent)
-//            }
-//            
-//            VStack(alignment: .trailing) {
-//                Text(coin.currentPrice.asCurrencyWith6Decimals())
-//                    .bold()
-//                    .foregroundColor(Color.theme.accent)
-//                Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
-//                    .foregroundColor(
-//                        (coin.priceChangePercentage24H ?? 0 >= 0) ?
-//                        Color.theme.green :
-//                        Color.theme.red
-//                    )
-//            }
-//            .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
-//        }
-//        .font(.subheadline)
-//    }
-//}
-
-//struct CoinRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CoinRowView(coin: dev.coin, showHoldingsColumn: true)
-//    }
-//}
