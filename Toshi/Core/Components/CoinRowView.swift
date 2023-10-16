@@ -64,12 +64,20 @@ struct CoinRowView: View {
                     Text(coin.currentPrice.asCurrencyWith6Decimals())
                         .bold()
                         .foregroundColor(Color.theme.accent)
+                        .contentTransition(.numericText())
+                        .transaction { t in
+                            t.animation = .bouncy
+                        }
                     Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
                         .foregroundColor(
                             (coin.priceChangePercentage24H ?? 0 >= 0) ?
                             Color.theme.green :
                             Color.theme.red
                         )
+                        .contentTransition(.numericText())
+                        .transaction { t in
+                                t.animation = .bouncy
+                        }
                 }
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
             }

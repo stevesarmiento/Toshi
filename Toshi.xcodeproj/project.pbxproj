@@ -306,12 +306,12 @@
 		F3BB33322AC9BB160054B74A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3BB33332AC9BB1E0054B74A /* CircleButton */,
+				F320B0942ACA7FB500F41E68 /* CoinImage */,
 				F33851572ACC8BE000B6F076 /* HomeStatsView.swift */,
 				F37DF72C2AC9E37D00B64858 /* CoinRowView.swift */,
 				F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */,
 				F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */,
-				F320B0942ACA7FB500F41E68 /* CoinImage */,
-				F3BB33332AC9BB1E0054B74A /* CircleButton */,
 				F33851462ACBCCB500B6F076 /* SearchBarView.swift */,
 				F33851552ACC891500B6F076 /* StatisticView.swift */,
 				F33851732ACE62BB00B6F076 /* PortfolioStatisticsView.swift */,

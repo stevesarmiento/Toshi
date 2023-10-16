@@ -97,12 +97,20 @@ struct DetailView: View {
                             .font(.system(size: 20))
                             .opacity(0.6)
                             .bold()
+                            .contentTransition(.numericText())
+                            .transaction { t in
+                                t.animation = .bouncy
+                            }
                         Text(vm.coin.priceChangePercentage24H?.asPercentString() ?? "")
                             .foregroundColor(
                                 (vm.coin.priceChangePercentage24H ?? 0 >= 0) ?
                                 Color.theme.green :
                                 Color.theme.red
                             )
+                            .contentTransition(.numericText())
+                            .transaction { t in
+                                t.animation = .bouncy
+                            }
                     }
                     Spacer()
                     Button(action: {
@@ -205,7 +213,7 @@ extension DetailView {
     
     private var additoinalTitle: some View {
         HStack{
-            Image(systemName: "chart.line.uptrend.xyaxis")
+            Image(systemName: "chart.bar.fill")
                 .font(.headline)
                 .bold()
                 .foregroundColor(Color.theme.accent.opacity(0.3))
