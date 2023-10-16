@@ -19,11 +19,11 @@ struct HomeView: View {
     @Namespace private var animation
 
     var body: some View {
-        VStack {
-            
+        ZStack {
             if selectedTab == 0 {
                 
                 homeSection
+                    .padding(.top, 25)
 
                 
             } else if selectedTab == 1 {
@@ -33,61 +33,17 @@ struct HomeView: View {
                 
                 newsPage
             }
+            homeMenu
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [Color.black, Color.theme.background]), startPoint: .bottom, endPoint: .top)
         )
         .animation(.easeInOut(duration: 0.15), value: selectedTab)
-        .overlay(
-            HStack {
-                Button(action: {
-                    previousTab = selectedTab
-                    selectedTab = 0
-                }) {
-                    Image(systemName: "backpack.fill")
-                        .bold()
-                        .font(.system(size: 20))
-                        .foregroundColor(selectedTab == 0 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
-                        .frame(width: 22, height: 22)
-                }.pressAnimation()
-                Spacer()
-                Button(action: {
-                    previousTab = selectedTab
-                    selectedTab = 1
-                }) {
-                    Image(systemName: "circle.hexagongrid.fill" )
-                        .bold()
-                        .font(.system(size: 20))
-                        .foregroundColor(selectedTab == 1 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
-                        .frame(width: 22, height: 22)
-                }.pressAnimation()
-                Spacer()
-                Button(action: {
-                    previousTab = selectedTab
-                    selectedTab = 2
-                }) {
-                    Image(systemName: "newspaper.fill")
-                        .bold()
-                        .font(.system(size: 20))
-                        .foregroundColor(selectedTab == 2 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
-                        .frame(width: 22, height: 22)
-                }.pressAnimation()
-            }
-//            .edgesIgnoringSafeArea(.all)
-            .frame(width: UIScreen.main.bounds.width / 2)
-            .padding(.horizontal, 30)
-            .padding(.vertical, 30)
-            .background(
-                RoundedRectangle(cornerRadius: 30)
-                    .fill(LinearGradient(gradient: Gradient(colors: [Color.theme.background, Color.theme.background]), startPoint: .bottom, endPoint: .top))
-                    .shadow(radius: 10)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 30)
-                    .stroke(Color.theme.accent.opacity(0.1), lineWidth: 1) // Add this line
-            )
-            , alignment: .bottom
-        )
+        // .overlay(
+ 
+        // )
         .overlay(
             Group {
                 if showingDetail {
@@ -112,6 +68,69 @@ struct HomeView: View {
 }
 
 extension HomeView {
+
+    private var homeMenu: some View {
+        GeometryReader { geometry in
+                ZStack {
+            ContentBlurView(direction: .bottomBlur) {
+                Rectangle()
+                    .fill(Color.clear)
+                    .frame(maxWidth: .infinity)
+            }  
+            HStack {
+                    Button(action: {
+                        previousTab = selectedTab
+                        selectedTab = 0
+                    }) {
+                        Image(systemName: "backpack.fill")
+                            .bold()
+                            .font(.system(size: 20))
+                            .foregroundColor(selectedTab == 0 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
+                            .frame(width: 22, height: 22)
+                    }.pressAnimation()
+                    Spacer()
+                    Button(action: {
+                        previousTab = selectedTab
+                        selectedTab = 1
+                    }) {
+                        Image(systemName: "circle.hexagongrid.fill" )
+                            .bold()
+                            .font(.system(size: 20))
+                            .foregroundColor(selectedTab == 1 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
+                            .frame(width: 22, height: 22)
+                    }.pressAnimation()
+                    Spacer()
+                    Button(action: {
+                        previousTab = selectedTab
+                        selectedTab = 2
+                    }) {
+                        Image(systemName: "newspaper.fill")
+                            .bold()
+                            .font(.system(size: 20))
+                            .foregroundColor(selectedTab == 2 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
+                            .frame(width: 22, height: 22)
+                    }.pressAnimation()
+                }
+                .frame(width: UIScreen.main.bounds.width / 2)
+                .padding(.horizontal, 30)
+                .padding(.vertical, 30)
+                .background(
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(LinearGradient(gradient: Gradient(colors: [Color.theme.background, Color.theme.background]), startPoint: .bottom, endPoint: .top))
+                        .shadow(radius: 10)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(Color.theme.accent.opacity(0.1), lineWidth: 1)
+                )         
+            }
+        }
+        .edgesIgnoringSafeArea(.bottom)
+        .frame(maxWidth: .infinity, maxHeight: 150, alignment: .bottom) 
+
+
+
+    }    
     
     private var newsPage: some View {
         
@@ -136,9 +155,6 @@ extension HomeView {
     
     private var homeSection: some View {
         Group {
-            Spacer()
-                .frame(height: 25)
-            
             VStack(alignment: .leading) {
                 CardGridView(showingDetail: $showingDetail, isCardSettingsViewShowing: $isCardSettingsViewShowing)
                     .fadeInEffect()
