@@ -14,7 +14,7 @@ import SwiftUI
 
     var body: some View {
         Image(systemName: getIconName())
-            .frame(height: 22)
+            .frame(height: 30)
             .foregroundColor(getIconColor())
             .bold()
             .font(.system(size: 20))
@@ -22,7 +22,7 @@ import SwiftUI
             .onChange(of: isFavorited, perform: { newValue in
                 if newValue {
                     withAnimation(.easeIn(duration: 0.1)) {
-                        scaleEffect = 1
+                        scaleEffect = 1.2
                         let impactMed = UIImpactFeedbackGenerator(style: .medium)
                         impactMed.impactOccurred()
                     }
@@ -34,7 +34,7 @@ import SwiftUI
                 } else {
                     isUnfavoriting = true
                     withAnimation(.easeOut(duration: 0.1)) {
-                        scaleEffect = 1
+                        scaleEffect = 1.2
                         let impactMed = UIImpactFeedbackGenerator(style: .medium)
                         impactMed.impactOccurred()
                     }

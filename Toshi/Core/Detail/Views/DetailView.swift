@@ -88,8 +88,10 @@ struct DetailView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         CoinImageView(coin: vm.coin)
-                            .frame(width: 40, height: 40)
+                            .frame(width: 50, height: 50)
                             .clipShape(Circle())
+                            .shadow(radius: 10)
+
                         Text(vm.coin.name)
                             .font(.system(size: 30))
                             .bold()
@@ -126,11 +128,12 @@ struct DetailView: View {
                                 Spacer()
                             }
                         }
-                        .buttonStyle(NoOpacityButtonStyle())                    
+                        .buttonStyle(NoOpacityButtonStyle())   
+                        .pressAnimation()                 
 
 
                 }
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 20)
                 
                 ChartView(coin: vm.coin)
                 
@@ -167,7 +170,7 @@ struct DetailView: View {
                     .slideUp()
 
                 }
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 20)
             }
         }
         .onAppear {
