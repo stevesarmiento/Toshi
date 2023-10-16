@@ -73,18 +73,19 @@ struct HomeView: View {
                         .frame(width: 22, height: 22)
                 }.pressAnimation()
             }
-            .edgesIgnoringSafeArea(.all)
-            .padding(.horizontal, 77)
+//            .edgesIgnoringSafeArea(.all)
+            .frame(width: UIScreen.main.bounds.width / 2)
+            .padding(.horizontal, 30)
             .padding(.vertical, 30)
             .background(
-                LinearGradient(gradient: Gradient(colors: [Color.theme.background, Color.theme.background]), startPoint: .bottom, endPoint: .top)
+                RoundedRectangle(cornerRadius: 30)
+                    .fill(LinearGradient(gradient: Gradient(colors: [Color.theme.background, Color.theme.background]), startPoint: .bottom, endPoint: .top))
+                    .shadow(radius: 10)
             )
             .overlay(
-                    Rectangle()
-                        .frame(height: 2)
-                        .foregroundColor(Color.theme.accent.opacity(0.1))
-                    , alignment: .top
-                )
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color.theme.accent.opacity(0.1), lineWidth: 1) // Add this line
+            )
             , alignment: .bottom
         )
         .overlay(
