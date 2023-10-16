@@ -57,7 +57,7 @@ struct HalfModalView<Content: View>: View {
                     content
                         .padding(.bottom, keyboard.currentHeight)
                         .animation(.easeOut(duration: 0.2), value: keyboard.currentHeight)
-                        //.frame(width: screenSize.width * 0.94)
+                        .frame(width: screenSize.width * 0.94)
                         .background(
                             RoundedRectangle(cornerRadius: 40)
                                 .fill(Color.theme.background)

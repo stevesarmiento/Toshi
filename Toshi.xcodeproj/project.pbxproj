@@ -299,7 +299,6 @@
 		F3BB33282AC930910054B74A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F338514C2ACC74FB00B6F076 /* Modals */,
 				F3BB331F2AC92B250054B74A /* Views */,
 				F3BB33272AC930840054B74A /* ViewModels */,
 			);
@@ -309,6 +308,7 @@
 		F3BB33322AC9BB160054B74A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F338514C2ACC74FB00B6F076 /* Modals */,
 				F3BB33332AC9BB1E0054B74A /* CircleButton */,
 				F320B0942ACA7FB500F41E68 /* CoinImage */,
 				F33851572ACC8BE000B6F076 /* HomeStatsView.swift */,
