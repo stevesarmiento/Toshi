@@ -88,7 +88,8 @@ struct CoinRowView: View {
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .foregroundColor(Color.theme.background)
-            )           .offset(x: swipeOffset, y: 0)
+            )
+            .offset(x: swipeOffset, y: 0)
             .gesture(
                 DragGesture(minimumDistance: 15)
                     .onChanged { value in

@@ -43,7 +43,7 @@ struct CoinFavoritesView: View {
                 .padding(.top, -3)
                 .pressAnimation()
                 Spacer()
-                    Text(coin.currentPrice.asCurrencyWith2Decimals())
+                    Text(coin.currentPrice.asCurrencyWith6Decimals())
                         .bold()
                         .foregroundColor(Color.theme.accent)
                         .contentTransition(.numericText())

@@ -16,7 +16,8 @@ class HomeViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var searchText: String = ""
     @Published var sortOptions: SortOptions = .holdings
-    
+    @Published var isGridViewActive: Bool = true
+
     private let coinDataService = CoinDataService()
     private let marketDataService = MarketDataService()
     private let portfolioDataService = PortfolioDataService()
