@@ -9,11 +9,15 @@ import Foundation
 import SwiftUI
 
 struct FavoritesGridView: View {
-//    let favorites: [Token]
-//    @EnvironmentObject var walletManager: WalletManager
-//    @State private var isPressed = false
+    @AppStorage("favoritedCoins") var favoritedCoinsData: Data = Data()
+        let gridLayout = [GridItem(.flexible()), GridItem(.flexible())]
+        let linearGradient = LinearGradient(gradient: Gradient(colors: [.red, .blue]), startPoint: .top, endPoint: .bottom)
+
 
     var body: some View {
+        let favoritedCoins = (try? JSONDecoder().decode([Coin].self, from: favoritedCoinsData)) ?? []
+
+
         VStack(alignment: .leading){
             HStack{
                 Image(systemName: "heart.fill")
@@ -29,7 +33,7 @@ struct FavoritesGridView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 14)
         
-//        if favorites.isEmpty {
+       if favoritedCoins.isEmpty {
 
                 VStack(alignment: .center){
                         Text("No tokens are favorited")
@@ -46,18 +50,19 @@ struct FavoritesGridView: View {
                 .fadeInEffect()
                 .slideUp()
 
-//        } else {
-//            ScrollView(.horizontal, showsIndicators: false) {
-//                LazyHGrid(rows: gridLayout, spacing: 18) {
-//                    ForEach(favorites, id: \.self) { token in
-//                        TokenFavoritesView(token: token)
-//                    }
-//                }.fadeInEffect()
-//                .slideUp()
-//                .padding(.horizontal, 8)
-//            }
-//            .frame(height: 100)
-//            .mask(linearGradient)
-//        }
+       } else {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHGrid(rows: gridLayout, spacing: 18) {
+                let favoritedCoins = (try? JSONDecoder().decode([Coin].self, from: favoritedCoinsData)) ?? []
+                ForEach(favoritedCoins, id: \.self) { coin in
+                    CoinFavoritesView(coin: coin)
+                }
+            }.fadeInEffect()
+            .slideUp()
+            .padding(.horizontal, 8)
+        }
+        .frame(height: 100)
+        .mask(linearGradient)
+       }
     }
 }

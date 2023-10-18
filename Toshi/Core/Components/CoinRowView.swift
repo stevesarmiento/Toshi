@@ -12,7 +12,8 @@ struct CoinRowView: View {
     let showHoldingsColumn: Bool
     @State private var isFavorited = false
     @State private var swipeOffset: CGFloat = 0
-    @State private var showCircle = false // New state variable
+    @State private var showCircle = false 
+    @AppStorage("favoritedCoins") var favoritedCoinsData: Data = Data()
 
     var body: some View {
         ZStack {
@@ -98,14 +99,14 @@ struct CoinRowView: View {
                     .onEnded { value in
                         if self.swipeOffset > 30 {
                             isFavorited.toggle()
-                            showCircle = true // Show the circle
+                            showCircle = true
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 showCircle = false
                             }
                             if isFavorited {
-                         //       walletManager.selectedWallet?.addToFavorites(coin: coin)
+                                addCoinToFavorites(coin: coin)
                             } else {
-                        //        walletManager.selectedWallet?.removeFromFavorites(coin: coin)
+                                removeCoinFromFavorites(coin: coin)
                             }
                         }
                         withAnimation {
@@ -115,12 +116,31 @@ struct CoinRowView: View {
             )
         }
         .onAppear {
-        //    isFavorited = walletManager.selectedWallet?.favorites.contains(coin) ?? false
+            isFavorited = isCoinFavorited(coin: coin)
         }
     }
 }
 
 extension CoinRowView {
-    
+    private func isCoinFavorited(coin: Coin) -> Bool {
+        let favoritedCoins = (try? JSONDecoder().decode([Coin].self, from: favoritedCoinsData)) ?? []
+        return favoritedCoins.contains(where: { $0.id == coin.id })
+    }
+
+    private func addCoinToFavorites(coin: Coin) {
+        var favoritedCoins = (try? JSONDecoder().decode([Coin].self, from: favoritedCoinsData)) ?? []
+        favoritedCoins.append(coin)
+        if let updatedData = try? JSONEncoder().encode(favoritedCoins) {
+            favoritedCoinsData = updatedData
+        }
+    }
+
+    private func removeCoinFromFavorites(coin: Coin) {
+        var favoritedCoins = (try? JSONDecoder().decode([Coin].self, from: favoritedCoinsData)) ?? []
+        favoritedCoins = favoritedCoins.filter { $0.id != coin.id }
+        if let updatedData = try? JSONEncoder().encode(favoritedCoins) {
+            favoritedCoinsData = updatedData
+        }
+    }
 }
 
