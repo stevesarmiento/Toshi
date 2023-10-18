@@ -13,20 +13,19 @@ struct CoinFavoritesView: View {
     let favoritesManager = CoinFavoritesManager()
 
     var body: some View {
-        VStack {
-                CoinImageView(coin: coin)
-                    .foregroundColor(Color.theme.accent)
-                    .frame(width: 30, height: 30)
-                    .clipShape(Circle())
-                    .padding(.leading, 7)
-                Text(coin.symbol.uppercased())
-                    .font(.headline)
-                    .bold()
-                    .padding(.leading, 7)
-                    .foregroundColor(Color.theme.accent)
-                                Spacer()
-                VStack {
-                Button(action: {
+        HStack{
+            VStack(alignment: .leading) {
+                    CoinImageView(coin: coin)
+                        .foregroundColor(Color.theme.accent)
+                        .frame(width: 33, height: 33)
+                        .clipShape(Circle())
+                    Spacer()
+                    Spacer()
+
+            }
+            Spacer()
+                VStack(alignment: .trailing) {
+                 Button(action: {
                     if favoritesManager.isCoinFavorited(coin: coin) {
                         favoritesManager.removeCoinFromFavorites(coin: coin)
                     } else {
@@ -37,19 +36,45 @@ struct CoinFavoritesView: View {
                         .bold()
                         .font(.system(size: 10))
                         .frame(width: 20, height: 20)
-                        .background(Color.black.opacity(0.1))
+                        .background(Color.theme.background)
                         .clipShape(Circle())
                         .foregroundColor(.gray)
                 }
                 .padding(.top, -3)
+                .pressAnimation()
                 Spacer()
+                    Text(coin.currentPrice.asCurrencyWith2Decimals())
+                        .bold()
+                        .foregroundColor(Color.theme.accent)
+                        .contentTransition(.numericText())
+                        .transaction { t in
+                            t.animation = .bouncy
+                        }
+                    Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
+                        .foregroundColor(
+                            (coin.priceChangePercentage24H ?? 0 >= 0) ?
+                            Color.theme.green :
+                            Color.theme.red
+                        )
+                        .contentTransition(.numericText())
+                        .transaction { t in
+                                t.animation = .bouncy
+                        }
                 }
         }
-        .frame(width: 104, height: 64)
-        .padding(.horizontal, 12)
-        .padding(.vertical, 14)
-        .background(Color.theme.accent.opacity(0.1))
+        .frame(width: 110, height: 70)
+        .font(.subheadline)
+        .padding(10)
+        .background(
+            ZStack {
+                Color.theme.accent.opacity(0.1)
+                ChartView(coin: coin)
+                    .opacity(0.2)
+            }
+        )
         .cornerRadius(16)
+        .slideUp()
+
 
     }
 }

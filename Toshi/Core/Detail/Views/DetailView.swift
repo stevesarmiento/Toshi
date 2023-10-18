@@ -63,7 +63,7 @@ struct VisualEffectView: UIViewRepresentable {
 
 struct DetailView: View {
 
-        @State private var isFavorited = false
+    @State private var isFavorited = false
 
     @StateObject private var vm: CoinDetailViewModel
     @State private var showFullDescription: Bool = false
@@ -136,6 +136,8 @@ struct DetailView: View {
                 .padding(.horizontal, 20)
                 
                 ChartView(coin: vm.coin)
+                    .frame(height: 220)
+
                 
                 VStack{
                     descriptionTitle

@@ -11,7 +11,6 @@ import SwiftUI
 struct FavoritesGridView: View {
     @AppStorage("favoritedCoins") var favoritedCoinsData: Data = Data()
         let gridLayout = [GridItem(.flexible()), GridItem(.flexible())]
-        let linearGradient = LinearGradient(gradient: Gradient(colors: [.red, .blue]), startPoint: .top, endPoint: .bottom)
 
 
     var body: some View {
@@ -59,8 +58,7 @@ struct FavoritesGridView: View {
                 }
                 .padding(.horizontal, 8)
             }
-            .frame(height: 120)
-            .mask(linearGradient)
+            .frame(height: 110)
        }
     }
 }
