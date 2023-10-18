@@ -51,18 +51,16 @@ struct FavoritesGridView: View {
                 .slideUp()
 
        } else {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: gridLayout, spacing: 18) {
-                let favoritedCoins = (try? JSONDecoder().decode([Coin].self, from: favoritedCoinsData)) ?? []
-                ForEach(favoritedCoins, id: \.self) { coin in
-                    CoinFavoritesView(coin: coin)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 18) {
+                    ForEach(favoritedCoins, id: \.self) { coin in
+                        CoinFavoritesView(coin: coin)
+                    }
                 }
-            }.fadeInEffect()
-            .slideUp()
-            .padding(.horizontal, 8)
-        }
-        .frame(height: 100)
-        .mask(linearGradient)
+                .padding(.horizontal, 8)
+            }
+            .frame(height: 120)
+            .mask(linearGradient)
        }
     }
 }
