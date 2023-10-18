@@ -36,10 +36,11 @@ struct FavoritesGridView: View {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
                 }) {
-                    Image(systemName: isGridViewActive ? "square.split.1x2" : "square.split.2x2")
-                            .font(.system(size: 18))
+                    Image(systemName: vm.isGridViewActive ? "rectangle.grid.2x2.fill" : "rectangle.grid.1x2.fill")
+                            .font(.system(size: 16))
                             .bold()
                             .foregroundColor(Color.theme.accent.opacity(0.3))
+                            .symbolEffect(.bounce, value: vm.isGridViewActive)
                 }
             }
         }

@@ -79,7 +79,7 @@ extension HomeView {
             }  
             HStack {
                     Button(action: {
-                        previousTab = selectedTab
+                        //previousTab = selectedTab
                         selectedTab = 0
                     }) {
                         Image(systemName: "backpack.fill")
@@ -87,10 +87,12 @@ extension HomeView {
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 0 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
                             .frame(width: 22, height: 22)
-                    }.pressAnimation()
+                            .symbolEffect(.bounce.down.byLayer, value: selectedTab == 0)
+
+                    }
                     Spacer()
                     Button(action: {
-                        previousTab = selectedTab
+                        //previousTab = selectedTab
                         selectedTab = 1
                     }) {
                         Image(systemName: "circle.hexagongrid.fill" )
@@ -98,10 +100,12 @@ extension HomeView {
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 1 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
                             .frame(width: 22, height: 22)
-                    }.pressAnimation()
+                            .symbolEffect(.bounce, value: selectedTab == 1)
+
+                    }
                     Spacer()
                     Button(action: {
-                        previousTab = selectedTab
+                        //previousTab = selectedTab
                         selectedTab = 2
                     }) {
                         Image(systemName: "newspaper.fill")
@@ -109,7 +113,9 @@ extension HomeView {
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 2 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
                             .frame(width: 22, height: 22)
-                    }.pressAnimation()
+                            .symbolEffect(.bounce, value: selectedTab == 2)
+
+                    }
                 }
                 .frame(width: UIScreen.main.bounds.width / 2)
                 .padding(.horizontal, 30)
@@ -140,17 +146,18 @@ extension HomeView {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
         }
-        .transition(makeTransition())
+       // .transition(makeTransition())
         
     }
     
     private var coinDetailPage: some View {
         Group {
             CardDetailView(isPresented: $showingDetail, selectedCoin: $selectedCoin, animation: _animation)
+                .fadeInEffect()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
         }
-        .transition(makeTransition())
+       // .transition(makeTransition())
     }
     
     private var homeSection: some View {
@@ -165,17 +172,17 @@ extension HomeView {
             }
             .padding(.horizontal)
         }
-        .transition(makeTransition())
+       // .transition(makeTransition())
     }
     
-    private func makeTransition() -> AnyTransition {
-        let insertionEdge: Edge = selectedTab > previousTab ? .trailing : .leading
-        let removalEdge: Edge = selectedTab > previousTab ? .leading : .trailing
-
-        return AnyTransition.asymmetric(
-            insertion: AnyTransition.opacity.combined(with: .move(edge: insertionEdge)),
-            removal: AnyTransition.opacity.combined(with: .move(edge: removalEdge))
-        )
-    }
+//    private func makeTransition() -> AnyTransition {
+//        let insertionEdge: Edge = selectedTab > previousTab ? .trailing : .leading
+//        let removalEdge: Edge = selectedTab > previousTab ? .leading : .trailing
+//
+//        return AnyTransition.asymmetric(
+//            insertion: AnyTransition.opacity.combined(with: .move(edge: insertionEdge)),
+//            removal: AnyTransition.opacity.combined(with: .move(edge: removalEdge))
+//        )
+//    }
     
 }

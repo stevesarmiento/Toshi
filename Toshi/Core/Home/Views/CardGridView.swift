@@ -113,7 +113,7 @@ struct CardGridView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "creditcard.fill")
+                Image(systemName: "rectangle.ratio.4.to.3.fill")
                     .font(.system(size: 14))
                     .foregroundColor(Color.theme.accent.opacity(0.3))
                     .frame(height: 14)

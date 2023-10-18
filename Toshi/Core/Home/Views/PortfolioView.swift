@@ -102,13 +102,30 @@ struct PortfolioView: View {
                 .padding(.top, 10)
                 .font(.caption)
                 .foregroundColor(Color.theme.accent.opacity(0.7))
-                ScrollView {
-                    LazyVStack {
-                        ForEach(vm.portfolioCoins) { coin in
-                            CoinRowView(coin: coin, showHoldingsColumn: true)
+                    ScrollView {
+                        if vm.portfolioCoins.isEmpty {
+                            VStack(alignment: .center){
+                                Text("You have no holdings added")
+                                    .bold()
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.theme.accent.opacity(0.7))
+                                Text("Add to holdings and start tracking coins in this bundle")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(Color.theme.accent.opacity(0.4))
+                            }
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding()
+                            .frame(height: 90)
+                            .fadeInEffect()
+                            .slideUp()
+                        } else {
+                            LazyVStack {
+                                ForEach(vm.portfolioCoins) { coin in
+                                    CoinRowView(coin: coin, showHoldingsColumn: true)
+                                }
+                            }
                         }
                     }
-                }
                 
                 Spacer()
 
