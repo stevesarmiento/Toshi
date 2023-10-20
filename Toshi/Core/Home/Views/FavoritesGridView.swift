@@ -74,7 +74,7 @@ struct FavoritesGridView: View {
                     }
                     .padding(.horizontal, 8)
                 }
-                .frame(height: 110)
+                .frame(height: 109)
             } else {
                 ScrollView(showsIndicators: false) {
                     LazyVStack {
@@ -82,6 +82,7 @@ struct FavoritesGridView: View {
                             CoinRowView(coin: coin, showHoldingsColumn: false)
                         }
                     }
+                    .padding(3)
                 }
                 .refreshable {
                     print("Refresh action triggered")

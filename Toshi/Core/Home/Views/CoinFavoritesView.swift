@@ -32,13 +32,13 @@ struct CoinFavoritesView: View {
                         favoritesManager.addCoinToFavorites(coin: coin)
                     }
                 }) {
-                    Image(systemName: favoritesManager.isCoinFavorited(coin: coin) ? "xmark" : "xmark")
+                    Image(systemName: favoritesManager.isCoinFavorited(coin: coin) ? "xmark.circle.fill" : "xmark.circle.fill")
                         .bold()
-                        .font(.system(size: 10))
-                        .frame(width: 20, height: 20)
-                        .background(Color.theme.background)
-                        .clipShape(Circle())
-                        .foregroundColor(.gray)
+                        .font(.system(size: 16))
+                        //.frame(width: 20, height: 20)
+                        //.background(Color.theme.background)
+                        //.clipShape(Circle())
+                        .foregroundColor(Color.theme.secondary)
                 }
                 .padding(.top, -3)
                 .pressAnimation()
@@ -67,9 +67,17 @@ struct CoinFavoritesView: View {
         .padding(10)
         .background(
             ZStack {
-                Color.theme.accent.opacity(0.1)
+                RoundedRectangle(cornerRadius: 16)
+                    .foregroundColor(Color.theme.background)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.theme.accent.opacity(0.07), lineWidth: 1)
+                            .shadow(radius: 10)
+
+                    )
                 ChartView(coin: coin)
                     .opacity(0.2)
+                    .padding(-2)
             }
         )
         .cornerRadius(16)

@@ -14,7 +14,7 @@ struct CardDetailView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @Binding var isPresented: Bool
     
-    @Binding var selectedCoin: Coin? // Add this line
+    @Binding var selectedCoin: Coin?
     @State private var showDetailView: Bool = false
     
     @Namespace var animation
@@ -64,6 +64,7 @@ extension CardDetailView {
                     .pressAnimation()
                 }
             }
+            .padding(3)
         }.refreshable {
             print("Refresh action triggered")
             vm.reloadData()

@@ -145,25 +145,71 @@ struct DetailView: View {
                     Divider()
                         descriptionSection
                     
-                    VStack {
+                    VStack(spacing:25) {
+                        VStack {
                         overviewTitle
-                            .padding(.top, 20)
+
                         overviewGird
                             .padding(5)
                             .background(
+                                RoundedRectangle(cornerRadius: 0)
+                                    .fill(Color.theme.accent.opacity(0.02))
+                                    .clipShape(RoundedRectangleCorners(radius: 15, corners: [.bottomLeft, .bottomRight]))
+                            )
+                            .overlay(
+                                VStack(spacing: 0) {
+                                    Rectangle()
+                                        .fill(Color.black.opacity(0.5))
+                                        .frame(height: 1)
+                                    Rectangle()
+                                        .fill(Color.theme.accent.opacity(0.1))
+                                        .frame(height: 1)
+                                }, alignment: .top
+                            )
+
+                        }
+                        .background(
                                 RoundedRectangle(cornerRadius: 15)
                                     .fill(Color.theme.accent.opacity(0.05))
                             )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.theme.accent.opacity(0.1), lineWidth: 1)
+                        )   
+                        .shadow(radius: 10)
 
-                        additoinalTitle
-                            .padding(.top, 20)
+                        VStack {                        
+                            additoinalTitle
 
-                        additionalGrid
-                            .padding(20)
+                            additionalGrid
+                            .padding(5)
+                            .padding(.vertical, 10)
                             .background(
+                                RoundedRectangle(cornerRadius: 0)
+                                    .fill(Color.theme.accent.opacity(0.02))
+                                    .clipShape(RoundedRectangleCorners(radius: 15, corners: [.bottomLeft, .bottomRight]))
+                            )
+                            .overlay(
+                                VStack(spacing: 0) {
+                                    Rectangle()
+                                        .fill(Color.black.opacity(0.5))
+                                        .frame(height: 1)
+                                    Rectangle()
+                                        .fill(Color.theme.accent.opacity(0.1))
+                                        .frame(height: 1)
+                                }, alignment: .top
+                            )
+                                                
+                        }
+                        .background(
                                 RoundedRectangle(cornerRadius: 15)
                                     .fill(Color.theme.accent.opacity(0.05))
                             )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.theme.accent.opacity(0.1), lineWidth: 1)
+                        )   
+                        .shadow(radius: 10)
                         
                         linksTitle
                             .padding(.top, 20)
@@ -182,12 +228,23 @@ struct DetailView: View {
 }
 
 extension DetailView {
+
     struct NoOpacityButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
                 .opacity(configuration.isPressed ? 1 : 1)
         }
     }
+
+    struct RoundedRectangleCorners: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
     private var descriptionTitle: some View {
         HStack{
             Image(systemName: "text.alignleft")
@@ -213,6 +270,8 @@ extension DetailView {
                 .foregroundColor(Color.theme.accent)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.top, 15)
+        .padding(.leading, 15)
 
     }
     
@@ -228,6 +287,8 @@ extension DetailView {
                 .foregroundColor(Color.theme.accent)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.top, 15)
+        .padding(.leading, 15)
 
     }
     
@@ -263,11 +324,11 @@ extension DetailView {
                                         .aspectRatio(contentMode: .fit)
                                         .foregroundColor(Color.theme.accent.opacity(0.1))
                                         .padding(1)
-                                        .shadow(radius: 10)
+                                        //.shadow(radius: 10)
                                 }
                             }
                         )
-                        .padding(5)
+                        .padding(20)
             }
             })
     }
@@ -275,7 +336,7 @@ extension DetailView {
     private var additionalGrid: some View {
         LazyVGrid(
             columns: columns2,
-            alignment: .leading,
+            alignment: .center,
             spacing: spacing,
             pinnedViews: [],
             content: {

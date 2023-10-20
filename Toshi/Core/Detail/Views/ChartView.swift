@@ -77,7 +77,7 @@ extension ChartView {
                 }
             }
             .trim(from:0, to: percentage)
-            .stroke(lineColor, style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
+            .stroke(lineColor, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
         }
     }
 

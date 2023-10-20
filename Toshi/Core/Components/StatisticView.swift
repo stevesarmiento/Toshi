@@ -12,7 +12,7 @@ struct StatisticView: View {
     let stat: Statistic
     
     var body: some View {
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Text(stat.title)
                     .font(.caption)
                     .foregroundStyle(Color.theme.accent.opacity(0.7))

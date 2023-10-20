@@ -87,35 +87,58 @@ extension HomeView {
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 0 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
                             .frame(width: 22, height: 22)
-                            .symbolEffect(.bounce.down.byLayer, value: selectedTab == 0)
+                            //.symbolEffect(.bounce.down.byLayer, value: selectedTab == 0)
 
                     }
+                    .pressAnimation()
+
                     Spacer()
+
                     Button(action: {
                         //previousTab = selectedTab
                         selectedTab = 1
                     }) {
-                        Image(systemName: "circle.hexagongrid.fill" )
+                        Image(systemName: "square.fill.on.circle.fill" )
                             .bold()
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 1 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
                             .frame(width: 22, height: 22)
-                            .symbolEffect(.bounce, value: selectedTab == 1)
+                            //.symbolEffect(.bounce, value: selectedTab == 1)
 
                     }
+                    .pressAnimation()
+
                     Spacer()
+
                     Button(action: {
                         //previousTab = selectedTab
                         selectedTab = 2
                     }) {
-                        Image(systemName: "newspaper.fill")
-                            .bold()
-                            .font(.system(size: 20))
-                            .foregroundColor(selectedTab == 2 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
-                            .frame(width: 22, height: 22)
-                            .symbolEffect(.bounce, value: selectedTab == 2)
+                        ZStack {
+                            Image(systemName: "newspaper.fill")
+                                .bold()
+                                .font(.system(size: 20))
+                                .foregroundColor(selectedTab == 2 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
+                                .frame(width: 22, height: 22)
+                            // .symbolEffect(.bounce, value: selectedTab == 2)
 
+                            // Notification bubble
+                            Text("3")
+                                .font(.system(size: 10))
+                                .bold()
+                                .foregroundColor(.white)
+                                .frame(width: 15, height: 15)
+                                .background(Color.theme.red)
+                                .clipShape(Circle())
+                                    .overlay(
+                                        Circle()
+                                            .stroke(Color.theme.background, lineWidth: 2)
+                                    )
+                                .offset(x: 10, y: -10) // Adjust the position as needed
+                        }
                     }
+                    .pressAnimation()
+
                 }
                 .frame(width: UIScreen.main.bounds.width / 2)
                 .padding(.horizontal, 30)
@@ -127,7 +150,7 @@ extension HomeView {
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: 30)
-                        .stroke(Color.theme.accent.opacity(0.1), lineWidth: 1)
+                        .stroke(Color.theme.accent.opacity(0.07), lineWidth: 1)
                 )         
             }
         }
