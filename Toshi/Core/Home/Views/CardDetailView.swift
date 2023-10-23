@@ -8,15 +8,16 @@
 import Foundation
 import SwiftUI
 
-
 struct CardDetailView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
     @Binding var isPresented: Bool
-    
+
     @Binding var selectedCoin: Coin?
     @State private var showDetailView: Bool = false
-    
+    @State private var selectedTab: Int = 0
+    @State private var isExpanded: Bool = false
+
     @Namespace var animation
     
     var body: some View {
@@ -32,24 +33,67 @@ struct CardDetailView: View {
                 Spacer()
                     .frame(height: 50)
                 HStack{
-                    SearchBarView(searchText: $vm.searchText)
+                    SearchBarView(isExpanded: $isExpanded, searchText: $vm.searchText)
                     Spacer()
+                    if !isExpanded {
+                        HStack {
+                            CustomTabView(imageName: "circlebadge.2.fill", title: "Coins", isActive: selectedTab == 0)
+                                .onTapGesture { selectedTab = 0 }
+                            CustomTabView(imageName: "photo.on.rectangle.angled", title: "JPEGs", isActive: selectedTab == 1)
+                                .onTapGesture { selectedTab = 1 }
+                        }
+                        .frame(height: 20)
+                    }
+                }
+              if selectedTab == 0 {    
+                  
+                columnHeaders
+                allCoinsList
+                  
+                } else if selectedTab == 1 {
+
+                    columnHeaders
+                    allCoinsList
+
                 }
 
-                columnHeaders
-                                
-                allCoinsList
             }.padding()
         }
         .matchedGeometryEffect(id: "detail", in: animation)
     }
 }
 
+
+
 extension CardDetailView {
+
     struct NoOpacityButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
                 .opacity(configuration.isPressed ? 1 : 1)
+        }
+    }
+    
+    struct CustomTabView: View {
+        let imageName: String
+        let title: String
+        let isActive: Bool
+        
+        var body: some View {
+            HStack {
+                Image(systemName: imageName)
+                    .font(.system(size: 16))
+                    .foregroundColor(isActive ? Color.theme.accent.opacity(0.7) : Color.theme.accent.opacity(0.3))
+                    .frame(height: 16)
+                Text(title)
+                    .foregroundColor(isActive ? .white : .white.opacity(0.6))
+                    .font(.system(size: 16))
+                    .bold()
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 5)
+            .background(isActive ? Color.theme.accent.opacity(0.1) : Color.clear)
+            .cornerRadius(50)
         }
     }
     

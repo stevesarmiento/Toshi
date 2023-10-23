@@ -16,7 +16,8 @@ struct PortfolioView: View {
     @Binding var portfolioModal: PortfolioModal?
     @State private var selectedCoin: Coin? = nil
     @State private var quantityText: String = ""
-    
+    @State private var isExpanded: Bool = false
+
     enum PortfolioModal {
         case addCoinModal
         // other cases...
@@ -175,7 +176,7 @@ struct PortfolioView: View {
 
                 }
                 VStack (alignment: .leading, spacing: 0) {
-                    SearchBarView(searchText: $vm.searchText)
+                    SearchBarView(isExpanded: $isExpanded, searchText: $vm.searchText)
         
                     coinLogoList
                     

@@ -6,6 +6,71 @@
 //
 
 import SwiftUI
+// import Charts
+
+// struct ChartView: View {
+    
+//     @State private var currentIndex: Int = 0
+    
+//     private let data: [Double]
+//     private let maxY: Double
+//     private let minY: Double
+//     private let lineColor: UIColor
+//     private let startingDate: Date
+//     private let endingDate: Date
+    
+//     @State private var percentage: CGFloat = 0
+    
+//     init(coin: Coin) {
+//         data = coin.sparklineIn7D?.price ?? []
+//         maxY = data.max() ?? 0
+//         minY = data.min() ?? 0
+        
+//         let priceChange = (data.last ?? 0) - (data.first ?? 0)
+//         lineColor = priceChange > 0 ? UIColor.green : UIColor.red
+        
+//         endingDate = Date(coinGeckoString: coin.lastUpdated ?? "")
+//         startingDate = endingDate.addingTimeInterval(-7*24*60*50)
+//     }
+    
+//     var body: some View {
+//         VStack{
+//             LineChartSwiftUI(data: data, color: lineColor)
+//         }
+//         .font(.caption)
+//         .foregroundColor(Color(lineColor).opacity(0.4))
+//         .onAppear{
+//             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                 withAnimation(.easeInOut(duration: 2.0)) {
+//                     percentage = 1.0
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// struct LineChartSwiftUI: UIViewRepresentable {
+//     let data: [Double]
+//     let color: UIColor
+    
+//     func makeUIView(context: Context) -> LineChartView {
+//         let chart = LineChartView()
+//         chart.data = generateData()
+//         return chart
+//     }
+    
+//     func updateUIView(_ uiView: LineChartView, context: Context) {
+//         uiView.data = generateData()
+//     }
+    
+//     func generateData() -> LineChartData {
+//         let entries = data.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
+//         let dataSet = LineChartDataSet(entries: entries)
+//         dataSet.colors = [color]
+//         return LineChartData(dataSet: dataSet)
+//     }
+// }
+
 
 struct ChartView: View {
     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @State private var isExpanded: Bool = false
+    @Binding var isExpanded: Bool
     @FocusState private var isFocused: Bool
     @Binding var searchText: String
     @Namespace private var animation
@@ -30,7 +30,8 @@ struct SearchBarView: View {
                         .overlay(
                             Image(systemName: "trash.fill")
                                 .resizable()
-                                .frame(width: 16, height: 16)
+                                .frame(width: 20, height: 20)
+                                .offset(x: 10)
                                 .foregroundColor(Color.theme.red)
                                 .padding()
                                 .symbolEffect(.bounce, value: isFocused)
@@ -61,7 +62,7 @@ struct SearchBarView: View {
                             .strokeBorder(Color.theme.accent.opacity(0.1), lineWidth: isFocused ? 3 : 0)
                             //.strokeBorder(Color.purple, lineWidth: isFocused ? 3 : 0)
                             .padding(-6)
-                            .matchedGeometryEffect(id: "searchBar", in: animation)
+                            //.matchedGeometryEffect(id: "searchBar", in: animation)
                 )
             }
 
