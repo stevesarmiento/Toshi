@@ -31,8 +31,10 @@ struct CardDetailView: View {
             VStack {
                 Spacer()
                     .frame(height: 50)
-                
-                SearchBarView(searchText: $vm.searchText)
+                HStack{
+                    SearchBarView(searchText: $vm.searchText)
+                    Spacer()
+                }
 
                 columnHeaders
                                 

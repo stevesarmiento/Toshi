@@ -38,7 +38,7 @@ struct CoinFavoritesView: View {
                         //.frame(width: 20, height: 20)
                         //.background(Color.theme.background)
                         //.clipShape(Circle())
-                        .foregroundColor(Color.theme.secondary)
+                        .foregroundColor(Color.gray)
                 }
                 .padding(.top, -3)
                 .pressAnimation()
