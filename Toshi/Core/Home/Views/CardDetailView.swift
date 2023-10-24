@@ -43,6 +43,7 @@ struct CardDetailView: View {
                                 .onTapGesture { selectedTab = 1 }
                         }
                         .frame(height: 20)
+                        .slideLeft()
                     }
                 }
               if selectedTab == 0 {    

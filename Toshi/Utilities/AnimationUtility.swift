@@ -104,31 +104,42 @@ struct SlideUp: ViewModifier {
 
 struct SlideLeft: ViewModifier {
     @State private var slideLeftAnimation = false
+    @State private var isShowing = false
 
     func body(content: Content) -> some View {
         content
             .offset(x: slideLeftAnimation ? 0 : 20)
+            .opacity(isShowing ? 1 : 0)
             .onAppear {
-                withAnimation(.easeOut(duration: 0.2)) {
-                    self.slideLeftAnimation = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    withAnimation(.easeOut(duration: 0.1)) {
+                        self.slideLeftAnimation = true
+                        isShowing = true
+
+                    }
                 }
             }
+        }
     }
-}
 
 struct SlideRight: ViewModifier {
     @State private var slideRightAnimation = false
+    @State private var isShowing = false
 
     func body(content: Content) -> some View {
         content
             .offset(x: slideRightAnimation ? 0 : -20)
+            .opacity(isShowing ? 1 : 0)
             .onAppear {
-                withAnimation(.easeOut(duration: 0.2)) {
-                    self.slideRightAnimation = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    withAnimation(.easeOut(duration: 0.1)) {
+                        self.slideRightAnimation = true
+                        isShowing = true
+                    }
                 }
             }
+        }
     }
-}
 
 
 struct AnimatedGradient: ViewModifier {

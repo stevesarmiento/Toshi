@@ -127,14 +127,14 @@ extension HomeView {
                                 .font(.system(size: 10))
                                 .bold()
                                 .foregroundColor(.white)
-                                .frame(width: 15, height: 15)
+                                .frame(width: 18, height: 18)
                                 .background(Color.theme.red)
                                 .clipShape(Circle())
                                     .overlay(
                                         Circle()
-                                            .stroke(Color.theme.background, lineWidth: 2)
+                                            .stroke(Color.theme.background, lineWidth: 4)
                                     )
-                                .offset(x: 10, y: -10) // Adjust the position as needed
+                                .offset(x: 10, y: -10)
                         }
                     }
                     .pressAnimation()

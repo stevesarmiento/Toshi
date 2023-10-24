@@ -60,6 +60,9 @@
 		F3DD437E2ADDCCE800DCFE44 /* ContentBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD437D2ADDCCE800DCFE44 /* ContentBlurView.swift */; };
 		F3DD43802ADF998B00DCFE44 /* CoinFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD437F2ADF998B00DCFE44 /* CoinFavoritesView.swift */; };
 		F3DD43822ADFA1AF00DCFE44 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD43812ADFA1AF00DCFE44 /* FavoritesManager.swift */; };
+		F3DD43862AE61D8600DCFE44 /* JpegsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD43852AE61D8600DCFE44 /* JpegsDataService.swift */; };
+		F3DD43882AE61E0300DCFE44 /* JpegModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD43872AE61E0300DCFE44 /* JpegModel.swift */; };
+		F3DD438A2AE70D6C00DCFE44 /* SearchBarFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD43892AE70D6C00DCFE44 /* SearchBarFullView.swift */; };
 		F3E761592AD250A90020FC80 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E761582AD250A90020FC80 /* String.swift */; };
 		F3E7615D2AD2F9150020FC80 /* DetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */; };
 		F3E7616F2AD4FB880020FC80 /* PortfolioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */; };
@@ -124,6 +127,9 @@
 		F3DD437D2ADDCCE800DCFE44 /* ContentBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlurView.swift; sourceTree = "<group>"; };
 		F3DD437F2ADF998B00DCFE44 /* CoinFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFavoritesView.swift; sourceTree = "<group>"; };
 		F3DD43812ADFA1AF00DCFE44 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		F3DD43852AE61D8600DCFE44 /* JpegsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JpegsDataService.swift; sourceTree = "<group>"; };
+		F3DD43872AE61E0300DCFE44 /* JpegModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JpegModel.swift; sourceTree = "<group>"; };
+		F3DD43892AE70D6C00DCFE44 /* SearchBarFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarFullView.swift; sourceTree = "<group>"; };
 		F3E761582AD250A90020FC80 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStatisticsView.swift; sourceTree = "<group>"; };
 		F3E7616E2AD4FB880020FC80 /* PortfolioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioManager.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				F338515B2ACC93CE00B6F076 /* MarketDataService.swift */,
 				F338516B2ACDF4E200B6F076 /* PortfolioDataService.swift */,
 				F33851822ACF4A3500B6F076 /* CoinDetailDataService.swift */,
+				F3DD43852AE61D8600DCFE44 /* JpegsDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -321,6 +328,7 @@
 				F338514F2ACC758700B6F076 /* CreateBundleCardView.swift */,
 				F338515F2ACCAC6C00B6F076 /* PortfolioStatsView.swift */,
 				F33851462ACBCCB500B6F076 /* SearchBarView.swift */,
+				F3DD43892AE70D6C00DCFE44 /* SearchBarFullView.swift */,
 				F33851552ACC891500B6F076 /* StatisticView.swift */,
 				F33851732ACE62BB00B6F076 /* PortfolioStatisticsView.swift */,
 				F3E7615C2AD2F9150020FC80 /* DetailStatisticsView.swift */,
@@ -347,6 +355,7 @@
 				F338517E2ACF469600B6F076 /* DetailViewModel.swift */,
 				F33851592ACC8EAA00B6F076 /* MarketData.swift */,
 				F33851682ACDF45100B6F076 /* PortfolioContainer.xcdatamodeld */,
+				F3DD43872AE61E0300DCFE44 /* JpegModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,6 +453,7 @@
 				F3DD43802ADF998B00DCFE44 /* CoinFavoritesView.swift in Sources */,
 				F37DF72D2AC9E37D00B64858 /* CoinRowView.swift in Sources */,
 				F338517F2ACF469600B6F076 /* DetailViewModel.swift in Sources */,
+				F3DD43862AE61D8600DCFE44 /* JpegsDataService.swift in Sources */,
 				F3BB33372AC9BD080054B74A /* CardDetailView.swift in Sources */,
 				F3BB33242AC92B800054B74A /* AnimationUtility.swift in Sources */,
 				F33851742ACE62BB00B6F076 /* PortfolioStatisticsView.swift in Sources */,
@@ -461,6 +471,7 @@
 				F3542B732ACBBE95004AEDFC /* LocalFileManager.swift in Sources */,
 				F33851872ACFBB0A00B6F076 /* Date.swift in Sources */,
 				F37DF7312AC9E71800B64858 /* Double.swift in Sources */,
+				F3DD43882AE61E0300DCFE44 /* JpegModel.swift in Sources */,
 				F3E761592AD250A90020FC80 /* String.swift in Sources */,
 				F3BB330E2AC913510054B74A /* ToshiApp.swift in Sources */,
 				F338515A2ACC8EAA00B6F076 /* MarketData.swift in Sources */,
@@ -473,6 +484,7 @@
 				F338514B2ACC736300B6F076 /* CardSettingsView.swift in Sources */,
 				F338515C2ACC93CE00B6F076 /* MarketDataService.swift in Sources */,
 				F33851492ACBD03600B6F076 /* UIApplication.swift in Sources */,
+				F3DD438A2AE70D6C00DCFE44 /* SearchBarFullView.swift in Sources */,
 				F33851622ACCF80C00B6F076 /* Enums.swift in Sources */,
 				F33851852ACF8A2300B6F076 /* ChartView.swift in Sources */,
 				F320B0962ACA7FC300F41E68 /* CoinImageView.swift in Sources */,

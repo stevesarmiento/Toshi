@@ -176,7 +176,7 @@ struct PortfolioView: View {
 
                 }
                 VStack (alignment: .leading, spacing: 0) {
-                    SearchBarView(isExpanded: $isExpanded, searchText: $vm.searchText)
+                    SearchBarFullView(searchText: $vm.searchText)
         
                     coinLogoList
                     
