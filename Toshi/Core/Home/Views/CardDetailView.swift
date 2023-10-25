@@ -64,8 +64,6 @@ struct CardDetailView: View {
     }
 }
 
-
-
 extension CardDetailView {
 
     struct NoOpacityButtonStyle: ButtonStyle {
@@ -92,9 +90,9 @@ extension CardDetailView {
                     .bold()
             }
             .padding(.horizontal, 10)
-            .padding(.vertical, 5)
+            .padding(.vertical, 8)
             .background(isActive ? Color.theme.accent.opacity(0.1) : Color.clear)
-            .cornerRadius(50)
+            .cornerRadius(10)
         }
     }
     

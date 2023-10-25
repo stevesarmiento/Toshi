@@ -158,13 +158,19 @@ struct PortfolioView: View {
         }) {
             VStack(alignment: .center){
                 HStack {
-                    InfoButton {
-                        withAnimation {
-                            //self.portfolioModal = nil
-                        }
-                    }
-                    .padding(.leading, 20)
-                    .padding(.top, 20)
+                    Text("Add Token")
+                        .bold()
+                        .font(.system(size: 20))
+                        .foregroundColor(Color.theme.accent.opacity(0.7))
+                        .padding(.top, 20)
+                        .padding(.leading, 20)
+                    // InfoButton {
+                    //     withAnimation {
+                    //         //self.portfolioModal = nil
+                    //     }
+                    // }
+                    // .padding(.leading, 20)
+                    // .padding(.top, 20)
                     Spacer()
                     XMarkButton {
                         withAnimation {
