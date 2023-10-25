@@ -82,17 +82,17 @@ extension CardDetailView {
             HStack {
                 Image(systemName: imageName)
                     .font(.system(size: 16))
-                    .foregroundColor(isActive ? Color.theme.accent.opacity(0.7) : Color.theme.accent.opacity(0.3))
+                    .foregroundColor(isActive ? Color.theme.accent.opacity(0.5) : Color.theme.accent.opacity(0.2))
                     .frame(height: 16)
                 Text(title)
-                    .foregroundColor(isActive ? .white : .white.opacity(0.6))
+                    .foregroundColor(isActive ? .white : .white.opacity(0.4))
                     .font(.system(size: 16))
                     .bold()
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 8)
-            .background(isActive ? Color.theme.accent.opacity(0.1) : Color.clear)
-            .cornerRadius(10)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .background(isActive ? Color.theme.accent.opacity(0.05) : Color.clear)
+            .cornerRadius(13)
         }
     }
     

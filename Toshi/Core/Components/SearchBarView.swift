@@ -56,14 +56,14 @@ struct SearchBarView: View {
                         //.strokeBorder(Color.theme.accent.opacity(0.05), lineWidth: isFocused ? 3 : 0)
                         .matchedGeometryEffect(id: "searchBar", in: animation)
                 )
-                .overlay(
-                        RoundedRectangle(cornerRadius: 50)
-                            .fill(Color.clear)
-                            .strokeBorder(Color.theme.accent.opacity(0.1), lineWidth: isFocused ? 3 : 0)
-                            //.strokeBorder(Color.purple, lineWidth: isFocused ? 3 : 0)
-                            .padding(-6)
-                            //.matchedGeometryEffect(id: "searchBar", in: animation)
-                )
+                // .overlay(
+                //         RoundedRectangle(cornerRadius: 50)
+                //             .fill(Color.clear)
+                //             .strokeBorder(Color.theme.accent.opacity(0.1), lineWidth: isFocused ? 3 : 0)
+                //             //.strokeBorder(Color.purple, lineWidth: isFocused ? 3 : 0)
+                //             .padding(-6)
+                //             //.matchedGeometryEffect(id: "searchBar", in: animation)
+                // )
             }
 
             if !isExpanded {

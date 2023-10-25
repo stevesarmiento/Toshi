@@ -25,19 +25,19 @@ struct CoinRowView: View {
             .padding()
             //.padding(.vertical, 5)
             .background(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: 18)
                 .foregroundColor(.white.opacity(0.1))
             )
             HStack(spacing: 0) {
                 Text("\(coin.rank)")
                     .font(.caption)
                     .foregroundColor(Color.theme.accent.opacity(0.5))
-                    .frame(minWidth: 20)
+                    .frame(minWidth: 15)
                 CoinImageView(coin: coin)
                     .foregroundColor(Color.theme.accent)
                     .frame(width: 30, height: 30)
                     .clipShape(Circle())
-                    .padding(.leading, 7)
+                    .padding(.horizontal, 7)
                     .overlay(
                         ZStack {
                             FavoriteIconCircleView(isFavorited: isFavorited)
@@ -86,11 +86,11 @@ struct CoinRowView: View {
             .font(.subheadline)
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: 18)
                     .foregroundColor(Color.theme.background)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.theme.accent.opacity(0.07), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: 18)
+                            .stroke(Color.theme.accent.opacity(0.05), lineWidth: 1)
                     )
                 )
 
