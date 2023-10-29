@@ -63,7 +63,7 @@ struct PortfolioView: View {
                 
 
                 HStack {
-                    Image(systemName: "handbag.fill")
+                    Image(systemName: "chart.line.uptrend.xyaxis")
                         .font(.system(size: 14))
                         .foregroundColor(Color.theme.accent.opacity(0.3))
                         .frame(height: 14)

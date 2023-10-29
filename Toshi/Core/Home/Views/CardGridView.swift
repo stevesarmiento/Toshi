@@ -36,6 +36,7 @@ struct CardView: View {
                                     .clipShape(Circle())
                         }
                         Spacer()
+                        //PortfolioStatsView()
                     }
                     Spacer()
                     Spacer()
@@ -113,7 +114,7 @@ struct CardGridView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "rectangle.ratio.4.to.3.fill")
+                Image(systemName: "button.horizontal.fill")
                     .font(.system(size: 14))
                     .foregroundColor(Color.theme.accent.opacity(0.3))
                     .frame(height: 14)

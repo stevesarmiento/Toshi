@@ -82,7 +82,7 @@ extension HomeView {
                         //previousTab = selectedTab
                         selectedTab = 0
                     }) {
-                        Image(systemName: "backpack.fill")
+                        Image(systemName: "square.fill.on.circle.fill")
                             .bold()
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 0 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
@@ -98,7 +98,7 @@ extension HomeView {
                         //previousTab = selectedTab
                         selectedTab = 1
                     }) {
-                        Image(systemName: "square.fill.on.circle.fill" )
+                        Image(systemName: "book.pages.fill" )
                             .bold()
                             .font(.system(size: 20))
                             .foregroundColor(selectedTab == 1 ? Color.theme.accent : Color.theme.accent.opacity(0.5))
