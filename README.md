@@ -5,7 +5,7 @@ simple, intuitive, and fun way to track your digital assets.
 
 <div align="left">
     <a href="https://twitter.com/toshi_tracker">
-        <img src="https://img.shields.io/twitter/follow/_Aufn?label=Aufn&style=flat&logo=twitter&color=1DA1F2" alt="Toshi Twitter">
+        <img src="https://img.shields.io/twitter/follow/toshi_tracker?label=Toshi&style=flat&logo=twitter&color=1DA1F2" alt="Toshi Twitter">
     </a>
 </div>
 
