@@ -16,13 +16,6 @@ simple, intuitive, and fun way to track your digital assets.
 - 📈 **Data from coingecko** Coingecko data right in the app
 - 📱 **Native interaction** move quickly, native means no lag just control.
 
-## 🥰 Community & Support
-
-- Install our [Testflight](#)  (coming soon)
-- Join our [Discord](https://discord.gg/WfnGShsD)
-- Follow our [Twitter](https://twitter.com/toshi_tracker)
-- To get help, ask a question, request a feature, be a part of the community. 
-
 ## ✍️ Authors
 
 - Steven ([@_Toxic_Mango](https://twitter.com/Toxic_Mangooo))
